@@ -45,11 +45,17 @@ const displayPricing = computed(() => {
         
         <div class="price-box">
           <span class="currency">$</span>
-          <span class="amount">{{ plan.currentPrice }}</span>
+          <transition name="price-fade" mode="out-in">
+            <span class="amount" :key="plan.currentPrice">{{ plan.currentPrice }}</span>
+          </transition>
           <span class="period">/mo</span>
         </div>
         
-        <p v-if="isYearly" class="yearly-info">Billed annually</p>
+        <div class="yearly-info-container">
+          <transition name="fade">
+            <p v-if="isYearly" class="yearly-info">Billed annually</p>
+          </transition>
+        </div>
 
         <ul class="feature-list">
           <li v-for="feat in plan.features" :key="feat">
@@ -75,16 +81,29 @@ const displayPricing = computed(() => {
 .dot.slide { transform: translateX(24px); }
 .discount-badge { background: rgba(16, 185, 129, 0.2); color: var(--primary); padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; margin-left: 5px; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.pricing-card { padding: 3rem 2rem; border-radius: 24px; text-align: center; border: 1px solid var(--border-color); transition: 0.3s; }
+.pricing-card { padding: 3rem 2rem; border-radius: 24px; text-align: center; border: 1px solid var(--border-color); transition: 0.3s; position: relative; }
 .pricing-card.popular { border-color: var(--primary); transform: scale(1.05); }
 .popular-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-.price-box { margin-top: 1.5rem; }
-.amount { font-size: 3.5rem; font-weight: 800; color: var(--text-main); }
-.yearly-info { font-size: 0.8rem; color: var(--primary); margin-top: -10px; margin-bottom: 20px; }
+.price-box { margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.2rem; }
+.amount { font-size: 3.5rem; font-weight: 800; color: var(--text-main); display: inline-block; }
+.yearly-info-container { height: 24px; margin-top: -5px; margin-bottom: 20px; }
+.yearly-info { font-size: 0.8rem; color: var(--primary); margin: 0; }
 .feature-list { list-style: none; text-align: left; margin-bottom: 2.5rem; }
 .feature-list li { margin-bottom: 0.75rem; color: var(--text-muted); display: flex; gap: 0.5rem; }
 .check { color: var(--primary); }
-.btn-plan { width: 100%; padding: 1rem; border-radius: 12px; font-weight: 700; cursor: pointer; border: none; }
+.btn-plan { width: 100%; padding: 1rem; border-radius: 12px; font-weight: 700; cursor: pointer; border: none; transition: 0.3s; }
 .btn-plan.primary { background: var(--primary); color: white; }
+.btn-plan.primary:hover { filter: brightness(1.1); }
 .btn-plan.secondary { background: var(--input-bg); color: var(--text-main); border: 1px solid var(--border-color); }
+.btn-plan.secondary:hover { background: var(--glass-bg); }
+
+.price-fade-enter-active,
+.price-fade-leave-active { transition: opacity 0.3s ease, transform 0.3s ease; }
+.price-fade-enter-from { opacity: 0; transform: translateY(-10px); }
+.price-fade-leave-to { opacity: 0; transform: translateY(10px); }
+
+.fade-enter-active,
+.fade-leave-active { transition: opacity 0.3s ease; }
+.fade-enter-from,
+.fade-leave-to { opacity: 0; }
 </style>

@@ -1,96 +1,111 @@
 <script setup>
 import { useContentStore } from '../stores/useContent'
 const store = useContentStore()
-const featuredPost = store.posts.find(p => p.featured)
-const regularPosts = store.posts.filter(p => !p.featured)
 </script>
 
 <template>
-  <div class="blog-container container">
-    <section v-if="featuredPost" class="featured-section">
-      <router-link :to="'/blog/' + featuredPost.slug" class="featured-card">
-        <div class="featured-img">
-          <img :src="featuredPost.image" :alt="featuredPost.title">
+  <div class="blog-page">
+    <div class="container">
+      <header class="page-header">
+        <h1>Our Blog</h1>
+        <p>Insights, thoughts, and announcements.</p>
+      </header>
+
+      <div v-if="store.featuredPost" class="featured-post glass">
+        <div class="featured-image">
+          <img :src="store.featuredPost.image" :alt="store.featuredPost.title" loading="lazy" />
         </div>
         <div class="featured-content">
-          <div class="meta">
-            <span class="category">{{ featuredPost.category }}</span>
-            <span class="date">{{ featuredPost.date }}</span>
+          <div class="post-meta">
+            <span class="category">{{ store.featuredPost.category }}</span>
+            <span class="date">{{ store.featuredPost.date }}</span>
           </div>
-          <h1>{{ featuredPost.title }}</h1>
-          <p>{{ featuredPost.excerpt }}</p>
+          <h2>
+            <router-link :to="`/blog/${store.featuredPost.slug}`">{{ store.featuredPost.title }}</router-link>
+          </h2>
+          <p>{{ store.featuredPost.excerpt }}</p>
           <div class="author">
-            <img :src="featuredPost.author.avatar" alt="">
-            <span>{{ featuredPost.author.name }}</span>
+            <img :src="store.featuredPost.author.avatar" :alt="store.featuredPost.author.name" />
+            <span>{{ store.featuredPost.author.name }}</span>
           </div>
         </div>
-      </router-link>
-    </section>
+      </div>
 
-    <div class="posts-grid">
-      <router-link 
-        v-for="post in regularPosts" 
-        :key="post.id" 
-        :to="'/blog/' + post.slug" 
-        class="post-card"
-      >
-        <div class="card-img">
-          <img :src="post.image" alt="">
-        </div>
-        <div class="card-body">
-          <div class="meta">
-            <span class="category">{{ post.category }}</span>
-            <span class="date">{{ post.date }}</span>
+      <div class="blog-grid">
+        <div v-for="post in store.regularPosts" :key="post.id" class="post-card glass">
+          <div class="post-image">
+            <img :src="post.image" :alt="post.title" loading="lazy" />
           </div>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt }}</p>
-          <div class="author">
-            <img :src="post.author.avatar" alt="">
-            <span>{{ post.author.name }}</span>
+          <div class="post-content">
+            <div class="post-meta">
+              <span class="category">{{ post.category }}</span>
+              <span class="date">{{ post.date }}</span>
+            </div>
+            <h3>
+              <router-link :to="`/blog/${post.slug}`">{{ post.title }}</router-link>
+            </h3>
+            <p>{{ post.excerpt }}</p>
+            <div class="author">
+              <img :src="post.author.avatar" :alt="post.author.name" />
+              <span>{{ post.author.name }}</span>
+            </div>
           </div>
         </div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.blog-container { padding-top: 120px; padding-bottom: 80px; }
-
-.featured-card {
-  display: flex;
-  gap: 3rem;
-  text-decoration: none;
-  color: #fff;
-  margin-bottom: 5rem;
-  align-items: center;
-}
-.featured-img { flex: 1.5; border-radius: 24px; overflow: hidden; height: 400px; }
-.featured-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.featured-card:hover .featured-img img { transform: scale(1.05); }
+.blog-page { padding: 120px 0 80px; }
+.page-header { text-align: center; margin-bottom: 4rem; }
+.page-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
+.page-header p { color: var(--text-muted); font-size: 1.25rem; }
+.featured-post { display: flex; gap: 3rem; align-items: center; padding: 2rem; border-radius: 24px; border: 1px solid var(--border-color); margin-bottom: 4rem; transition: 0.3s; }
+.featured-post:hover { border-color: var(--primary); }
+.featured-image { flex: 1; height: 350px; border-radius: 16px; overflow: hidden; }
+.featured-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.featured-post:hover .featured-image img { transform: scale(1.05); }
 .featured-content { flex: 1; }
 
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-}
-.post-card { text-decoration: none; color: #fff; display: flex; flex-direction: column; }
-.card-img { border-radius: 16px; overflow: hidden; height: 220px; margin-bottom: 1.5rem; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; }
-.meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.category { color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; }
-.date { color: var(--text-muted); font-size: 0.85rem; }
-h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 1.5rem; }
-h3 { font-size: 1.2rem; margin-bottom: 1rem; line-height: 1.4; }
-p { color: var(--text-muted); line-height: 1.6; margin-bottom: 2rem; }
+.post-meta { display: flex; gap: 1rem; margin-bottom: 1rem; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.category { color: var(--primary); }
+.date { color: var(--text-muted); }
+
+.featured-content h2 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+.featured-content h2 a { color: var(--text-main); text-decoration: none; transition: 0.3s; }
+.featured-content h2 a:hover { color: var(--primary); }
+.featured-content p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
 
 .author { display: flex; align-items: center; gap: 0.75rem; }
-.author img { width: 32px; height: 32px; border-radius: 50%; }
-.author span { font-size: 0.9rem; font-weight: 500; }
+.author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-color); }
+.author span { font-weight: 600; color: var(--text-main); }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
+.post-card { display: flex; flex-direction: column; padding: 1.5rem; border-radius: 20px; border: 1px solid var(--border-color); transition: 0.3s; }
+.post-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.post-image { height: 200px; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem; }
+.post-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.post-card:hover .post-image img { transform: scale(1.05); }
+
+.post-content { display: flex; flex-direction: column; flex: 1; }
+.post-content h3 { font-size: 1.4rem; margin-bottom: 1rem; line-height: 1.3; }
+.post-content h3 a { color: var(--text-main); text-decoration: none; transition: 0.3s; }
+.post-content h3 a:hover { color: var(--primary); }
+.post-content p { color: var(--text-muted); line-height: 1.5; margin-bottom: 1.5rem; flex: 1; }
 @media (max-width: 992px) {
-  .featured-card { flex-direction: column; text-align: center; }
-  .posts-grid { grid-template-columns: repeat(2, 1fr); }
+  .featured-post { flex-direction: column; gap: 2rem; }
+  .featured-image { width: 100%; height: 300px; }
+  .page-header h1 { font-size: 2.8rem; }
+}
+
+@media (max-width: 768px) {
+  .page-header { margin-bottom: 2rem; }
+  .page-header h1 { font-size: 2.2rem; }
+  .featured-content h2 { font-size: 1.8rem; }
+  .blog-grid { 
+    grid-template-columns: 1fr; 
+    gap: 1.5rem; 
+  }
 }
 </style>

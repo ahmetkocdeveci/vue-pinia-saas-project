@@ -4,33 +4,27 @@ const store = useContentStore()
 </script>
 
 <template>
-  <section id="features" class="features-section container">
-    <div v-for="feature in store.features" :key="feature.id" class="feature-row" :class="{ 'row-reverse': feature.reverse }">
-      <div class="feature-text">
-        <h2>{{ feature.title }}</h2>
-        <p class="description">{{ feature.description }}</p>
-        <ul class="feature-list">
-          <li v-for="(item, idx) in feature.items" :key="idx">
-            <span class="icon">{{ item.icon }}</span>
-            <p>{{ item.text }}</p>
-          </li>
-        </ul>
-      </div>
-      <div class="feature-visual glass">
-        <img :src="feature.image" :alt="feature.title" class="feature-img" />
-      </div>
-    </div>
+  <section id="features" class="features-section">
+    <div class="container">
+      <div 
+        v-for="feature in store.features" 
+        :key="feature.id" 
+        class="feature-row glass"
+        :class="{ 'reverse': feature.reverse }"
+      >
+        <div class="feature-content">
+          <h2>{{ feature.title }}</h2>
+          <p>{{ feature.description }}</p>
+          <ul class="feature-list">
+            <li v-for="item in feature.items" :key="item.text">
+              <span class="icon">{{ item.icon }}</span>
+              {{ item.text }}
+            </li>
+          </ul>
+        </div>
 
-    <div class="grid-section">
-      <div class="section-header">
-        <h2>Everything You Need to Ship</h2>
-        <p>Stop building from scratch. Focus on your unique features.</p>
-      </div>
-      <div class="grid-layout">
-        <div v-for="item in store.gridFeatures" :key="item.title" class="feature-card glass">
-          <div class="card-icon">{{ item.icon }}</div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.desc }}</p>
+        <div class="feature-image">
+          <img :src="feature.image" :alt="feature.title" loading="lazy" />
         </div>
       </div>
     </div>
@@ -38,20 +32,52 @@ const store = useContentStore()
 </template>
 
 <style scoped>
-.features-section { padding: 80px 0; }
-.feature-row { display: flex; align-items: center; gap: 4rem; margin-bottom: 120px; }
-.row-reverse { flex-direction: row-reverse; }
-.feature-text { flex: 1; }
-.feature-text h2 { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; }
-.description { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 2rem; }
+.features-section { padding: 100px 0; }
+.feature-row { display: flex; align-items: center; gap: 4rem; padding: 3rem; border-radius: 24px; border: 1px solid var(--border-color); margin-bottom: 4rem; transition: 0.3s; }
+.feature-row:hover { border-color: var(--primary); }
+.feature-row.reverse { flex-direction: row-reverse; }
+
+.feature-content { flex: 1; }
+.feature-content h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-main); }
+.feature-content p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
 .feature-list { list-style: none; }
-.feature-list li { display: flex; gap: 1rem; margin-bottom: 1rem; }
-.feature-visual { flex: 1; aspect-ratio: 16/10; border-radius: 24px; overflow: hidden; border: 1px solid var(--border-color); }
-.feature-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: 0.3s; }
-.feature-img:hover { opacity: 1; }
-.grid-section { margin-top: 150px; }
-.section-header { text-align: center; margin-bottom: 4rem; }
-.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.feature-card { padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color); transition: 0.3s; }
-.feature-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.feature-list li { display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.75rem; }
+.icon { font-size: 1.5rem; }
+
+.feature-image { flex: 1; height: 400px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); }
+.feature-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.feature-row:hover .feature-image img { transform: scale(1.05); }
+@media (max-width: 992px) {
+  .feature-row { gap: 2rem; padding: 2rem; }
+  .feature-content h2 { font-size: 2rem; }
+  .feature-image { height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .feature-row, .feature-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .feature-image {
+    order: -1;
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 16/9;
+    margin-bottom: 1rem; 
+  }
+
+  .feature-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .feature-list {
+    display: inline-block; 
+    text-align: left;
+  }
+  .feature-list li {
+    justify-content: flex-start;
+  }
+}
 </style>

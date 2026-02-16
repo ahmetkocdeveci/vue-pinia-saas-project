@@ -32,9 +32,11 @@ const faqs = ref([
               <span>{{ faq.question }}</span>
               <span class="chevron" :class="{ 'rotate': faq.open }">▼</span>
             </div>
-            <div v-show="faq.open" class="faq-answer">
-              {{ faq.answer }}
-            </div>
+            <transition name="faq-slide">
+              <div v-show="faq.open" class="faq-answer">
+                {{ faq.answer }}
+              </div>
+            </transition>
           </div>
         </div>
       </section>
@@ -47,18 +49,19 @@ const faqs = ref([
 .page-header { text-align: center; margin-bottom: 4rem; }
 .page-header h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem; }
 .page-header p { color: var(--text-muted); font-size: 1.25rem; }
-
 .faq-section { margin-top: 120px; }
 .section-header { text-align: center; margin-bottom: 4rem; }
 .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-.faq-item { padding: 1.5rem; border-radius: 16px; cursor: pointer; border: 1px solid var(--border-color); transition: 0.3s; }
+.faq-item { padding: 1.5rem; border-radius: 16px; cursor: pointer; border: 1px solid var(--border-color); transition: border-color 0.3s ease; }
 .faq-item:hover { border-color: var(--primary); }
-
 .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
-.chevron { font-size: 0.8rem; transition: 0.3s; color: var(--text-muted); }
+.chevron { font-size: 0.8rem; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); color: var(--text-muted); }
 .chevron.rotate { transform: rotate(180deg); color: var(--primary); }
-
 .faq-answer { margin-top: 1rem; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-color); padding-top: 1rem; }
+
+.faq-slide-enter-active,
+.faq-slide-leave-active { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); max-height: 300px; opacity: 1; overflow: hidden; }
+.faq-slide-enter-from,
+.faq-slide-leave-to { max-height: 0; opacity: 0; margin-top: 0; padding-top: 0; overflow: hidden; }
 </style>

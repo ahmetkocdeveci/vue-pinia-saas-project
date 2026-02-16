@@ -4,16 +4,34 @@ import AppFooter from './components/AppFooter.vue'
 </script>
 
 <template>
-  <div class="app-layout">
+  <div class="app-wrapper">
     <AppNavbar />
-    <main class="content">
-      <router-view />
+    
+    <main class="main-content">
+      <router-view v-slot="{ Component }">
+        <transition name="page" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
+
     <AppFooter />
   </div>
 </template>
 
 <style>
-.app-layout { display: flex; flex-direction: column; min-height: 100vh; }
-.content { flex: 1; }
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-15px);
+}
 </style>
