@@ -24,8 +24,7 @@ const handleLogout = () => {
   authStore.logout();
   showDropdown.value = false;
   isMobileMenuOpen.value = false;
-  router.push("/login");
-};
+router.push(`/${locale.value}/login`);};
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
@@ -234,16 +233,16 @@ onMounted(() => {
 
     <div class="mobile-menu" :class="{ 'is-open': isMobileMenuOpen }">
       <div class="mobile-nav-links">
-        <router-link to="/docs" @click="closeMobileMenu">{{
+        <router-link :to="`/${locale}/docs`" @click="closeMobileMenu">{{
           t("nav.docs")
         }}</router-link>
-        <router-link to="/pricing" @click="closeMobileMenu">{{
+        <router-link :to="`/${locale}/pricing`" @click="closeMobileMenu">{{
           t("nav.pricing")
         }}</router-link>
-        <router-link to="/blog" @click="closeMobileMenu">{{
+        <router-link :to="`/${locale}/blog`" @click="closeMobileMenu">{{
           t("nav.blog")
         }}</router-link>
-        <router-link to="/changelog" @click="closeMobileMenu">{{
+        <router-link :to="`/${locale}/changelog`" @click="closeMobileMenu">{{
           t("nav.changelog")
         }}</router-link>
       </div>

@@ -199,8 +199,23 @@ onMounted(() => {
 .clear-btn { margin-top: 1rem; padding: 0.5rem 1rem; border: 1px solid var(--border); background: transparent; color: var(--heading); border-radius: 6px; cursor: pointer; }
 
 @media (max-width: 768px) {
-  .blog-header { flex-direction: column; align-items: flex-start; }
-  .search-box { max-width: 100%; }
-  .page-numbers { display: none; }
+  .blog-header { 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 1.5rem; 
+  }
+  .search-box { 
+    max-width: 100%; 
+    width: 100%; 
+    flex-direction: column; 
+  }
+  .search-btn { 
+    width: 100%; 
+    justify-content: center; 
+    padding: 0.85rem;
+  }
+  .page-numbers { 
+    display: none; 
+  }
 }
 </style>
