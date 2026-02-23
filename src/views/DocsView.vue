@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import { useI18n } from 'vue-i18n'
 import DocsSidebar from '../components/docs/DocsSidebar.vue'
 import DocsToc from '../components/docs/DocsToc.vue'
 import DocsSearchModal from '../components/docs/DocsSearchModal.vue'
@@ -10,6 +11,8 @@ import MarkdownPage from '../components/docs/pages/MarkdownPage.vue'
 import CodeBlocksPage from '../components/docs/pages/CodeBlocksPage.vue'
 import ProsePage from '../components/docs/pages/ProsePage.vue'
 import ImagesPage from '../components/docs/pages/ImagesPage.vue'
+
+const { t } = useI18n()
 
 const currentPage = ref('installation')
 const activeHeading = ref('')
@@ -40,7 +43,7 @@ const pageTitles = {
 }
 
 const currentContentComponent = computed(() => pages[currentPage.value])
-const currentTitle = computed(() => pageTitles[currentPage.value])
+const currentTitle = computed(() => t(`docs.pages.${currentPage.value}`))
 
 const initObserver = () => {
   if (observer) observer.disconnect()
@@ -104,7 +107,7 @@ watch(currentPage, () => { nextTick(() => initObserver()) })
     <div class="docs-container">
       <aside class="docs-sidebar" :class="{ 'is-open': isMobileMenuOpen }">
         <div class="sidebar-mobile-header">
-          <span>Navigation</span>
+          <span>{{ t('docs.navigation') }}</span>
           <button class="icon-btn" @click="isMobileMenuOpen = false">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
           </button>
@@ -115,7 +118,7 @@ watch(currentPage, () => { nextTick(() => initObserver()) })
       <main class="docs-main">
         <div class="mobile-toc-box" :class="{ 'is-open': isMobileTocOpen }">
           <button class="mobile-toc-btn" @click="isMobileTocOpen = !isMobileTocOpen">
-            <span>On this page</span>
+            <span>{{ t('docs.onThisPage') }}</span>
             <svg class="chevron" :class="{ 'open': isMobileTocOpen }" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="mobile-toc-content" v-show="isMobileTocOpen">
@@ -167,7 +170,6 @@ html.dark, html[data-theme="dark"], .dark {
   --icon-bg: #1e293b;
 }
 </style>
-
 <style scoped>
 .docs-wrapper {
   background-color: var(--bg);
@@ -182,7 +184,7 @@ html.dark, html[data-theme="dark"], .dark {
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-inline: 2rem; 
   gap: 3rem;
   align-items: flex-start;
 }
@@ -213,7 +215,18 @@ html.dark, html[data-theme="dark"], .dark {
   padding-bottom: 10rem;
 }
 
-.mobile-header { display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 40; background: var(--bg); border-bottom: 1px solid var(--border); padding: 0.75rem 1.5rem; justify-content: space-between; align-items: center; }
+.mobile-header { 
+  display: none; 
+  position: fixed; 
+  top: 60px; 
+  inset-inline: 0; 
+  z-index: 40; 
+  background: var(--bg); 
+  border-bottom: 1px solid var(--border); 
+  padding: 0.75rem 1.5rem; 
+  justify-content: space-between; 
+  align-items: center; 
+}
 .icon-btn { background: transparent; border: none; color: var(--text); cursor: pointer; display: flex; align-items: center; padding: 0; }
 .mobile-title { color: var(--heading); font-weight: 600; font-size: 0.95rem; }
 .mobile-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(4px); z-index: 50; }
@@ -234,11 +247,22 @@ html.dark, html[data-theme="dark"], .dark {
 .docs-wrapper :deep(.docs-page-content a) { color: var(--primary); text-decoration: none; font-weight: 500; }
 .docs-wrapper :deep(.docs-page-content a:hover) { text-decoration: underline; }
 .docs-wrapper :deep(.docs-page-content strong) { color: var(--heading); font-weight: 600; }
+
 .docs-wrapper :deep(.docs-page-content ul) { list-style: none; padding: 0; margin: 0 0 2rem 0; }
-.docs-wrapper :deep(.docs-page-content ul li) { position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem; line-height: 1.6; color: var(--text); }
-.docs-wrapper :deep(.docs-page-content ul li::before) { content: ""; position: absolute; left: 0; top: 0.65rem; width: 5px; height: 5px; border-radius: 50%; background-color: var(--primary); }
-.docs-wrapper :deep(.docs-page-content ol) { list-style-type: decimal; padding-left: 1.25rem; margin: 0 0 2rem 0; color: var(--text); }
-.docs-wrapper :deep(.docs-page-content ol li) { margin-bottom: 0.75rem; line-height: 1.6; padding-left: 0.5rem; color: var(--text); }
+.docs-wrapper :deep(.docs-page-content ul li) { position: relative; padding-inline-start: 1.5rem; margin-bottom: 0.75rem; line-height: 1.6; color: var(--text); }
+.docs-wrapper :deep(.docs-page-content ul li::before) { 
+  content: ""; 
+  position: absolute; 
+  inset-inline-start: 0; 
+  top: 0.65rem; 
+  width: 5px; 
+  height: 5px; 
+  border-radius: 50%; 
+  background-color: var(--primary); 
+}
+.docs-wrapper :deep(.docs-page-content ol) { list-style-type: decimal; padding-inline-start: 1.25rem; margin: 0 0 2rem 0; color: var(--text); }
+.docs-wrapper :deep(.docs-page-content ol li) { margin-bottom: 0.75rem; line-height: 1.6; padding-inline-start: 0.5rem; color: var(--text); }
+
 .docs-wrapper :deep(.docs-page-content code.inline-code) { background-color: var(--code-header); border: 1px solid var(--code-border); color: var(--text); padding: 0.15rem 0.375rem; border-radius: 0.375rem; font-size: 0.875em; font-family: monospace; }
 .docs-wrapper :deep(.docs-code-block) { background-color: var(--code-bg); border: 1px solid var(--code-border); border-radius: 0.5rem; margin: 1.5rem 0 2.5rem 0; overflow: hidden; }
 .docs-wrapper :deep(.docs-code-header) { background-color: var(--code-header); border-bottom: 1px solid var(--code-border); display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 1rem; }
@@ -247,12 +271,15 @@ html.dark, html[data-theme="dark"], .dark {
 .docs-wrapper :deep(.docs-code-copy:hover) { color: var(--heading); background: var(--card-hover); }
 .docs-wrapper :deep(.docs-code-block pre) { margin: 0; padding: 1.25rem 1rem; overflow-x: auto; }
 .docs-wrapper :deep(.docs-code-block code) { color: var(--primary); font-size: 0.875rem; line-height: 1.5; font-family: monospace; }
+
 .docs-wrapper :deep(.docs-nav-cards) { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; gap: 1.5rem; }
 .docs-wrapper :deep(.docs-nav-cards.right-only) { justify-content: flex-end; }
 .docs-wrapper :deep(.docs-nav-card) { display: flex; flex-direction: column; width: 100%; max-width: calc(50% - 0.75rem); padding: 1.5rem; border-radius: 12px; background: var(--card-bg); border: 1px solid var(--border); text-decoration: none !important; transition: 0.2s; }
 .docs-wrapper :deep(.docs-nav-cards.right-only .docs-nav-card) { max-width: 320px; }
-.docs-wrapper :deep(.docs-nav-card.prev) { align-items: flex-start; text-align: left; }
-.docs-wrapper :deep(.docs-nav-card.next) { align-items: flex-end; text-align: right; }
+
+.docs-wrapper :deep(.docs-nav-card.prev) { align-items: flex-start; text-align: start; }
+.docs-wrapper :deep(.docs-nav-card.next) { align-items: flex-end; text-align: end; }
+
 .docs-wrapper :deep(.docs-nav-card:hover) { background: var(--card-hover); border-color: var(--primary); }
 .docs-wrapper :deep(.docs-nav-icon) { width: 40px; height: 40px; border-radius: 50%; margin-bottom: 1rem; background: var(--icon-bg); display: flex; align-items: center; justify-content: center; color: var(--heading); }
 .docs-wrapper :deep(.docs-nav-label) { font-size: 0.75rem; text-transform: uppercase; font-weight: 600; color: var(--text); margin-bottom: 0.25rem; }
@@ -269,16 +296,34 @@ html.dark, html[data-theme="dark"], .dark {
   .docs-wrapper { padding-top: 110px; }
   .mobile-header { display: flex; }
   .docs-container { padding: 1rem; }
-  .docs-sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; height: 100vh; background: var(--bg); z-index: 60; transform: translateX(-100%); transition: transform 0.3s ease; border-right: 1px solid var(--border); padding-bottom: 0; }
-  .docs-sidebar.is-open { transform: translateX(0); }
+  
+  .docs-sidebar { 
+    position: fixed; 
+    top: 0; 
+    inset-inline-start: 0; 
+    bottom: 0; 
+    width: 280px; 
+    height: 100vh; 
+    background: var(--bg); 
+    z-index: 60; 
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease; 
+    border-inline-end: 1px solid var(--border); 
+    padding-bottom: 0; 
+  }
+  .docs-sidebar.is-open { transform: translateX(0) !important; }
   .sidebar-mobile-header { display: flex; }
   .docs-wrapper :deep(.docs-nav-cards) { flex-direction: column; }
   .docs-wrapper :deep(.docs-nav-card) { max-width: 100%; }
   .docs-wrapper :deep(.docs-nav-cards.right-only .docs-nav-card) { max-width: 100%; }
 }
-
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text); }
+@media (max-width: 768px) {
+  [dir="rtl"] .docs-sidebar {
+    transform: translateX(100%);
+  }
+}
 </style>

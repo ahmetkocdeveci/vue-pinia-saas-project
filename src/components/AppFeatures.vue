@@ -1,13 +1,13 @@
 <script setup>
-import { useContentStore } from '../stores/useContent'
-const store = useContentStore()
+import { useI18n } from 'vue-i18n'
+const { tm } = useI18n()
 </script>
 
 <template>
   <section id="features" class="features-section">
     <div class="container">
       <div 
-        v-for="feature in store.features" 
+        v-for="feature in tm('features')" 
         :key="feature.id" 
         class="feature-row glass"
         :class="{ 'reverse': feature.reverse }"
@@ -40,13 +40,14 @@ const store = useContentStore()
 .feature-content { flex: 1; }
 .feature-content h2 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-main); }
 .feature-content p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; }
-.feature-list { list-style: none; }
+.feature-list { list-style: none; padding: 0; }
 .feature-list li { display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.75rem; }
 .icon { font-size: 1.5rem; }
 
 .feature-image { flex: 1; height: 400px; border-radius: 20px; overflow: hidden; border: 1px solid var(--border-color); }
 .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .feature-row:hover .feature-image img { transform: scale(1.05); }
+
 @media (max-width: 992px) {
   .feature-row { gap: 2rem; padding: 2rem; }
   .feature-content h2 { font-size: 2rem; }
@@ -74,7 +75,7 @@ const store = useContentStore()
   }
   .feature-list {
     display: inline-block; 
-    text-align: left;
+    text-align: start;
   }
   .feature-list li {
     justify-content: flex-start;

@@ -1,0 +1,651 @@
+{
+  "nav": {
+    "docs": "Dokümanlar",
+    "pricing": "Fiyatlandırma",
+    "blog": "Blog",
+    "changelog": "Güncellemeler",
+    "signIn": "Giriş Yap",
+    "signUp": "Kayıt Ol",
+    "logout": "Çıkış Yap"
+  },
+  "hero": {
+    "title": "Harika projenizi inşa edin",
+    "highlight": "hiç olmadığı kadar hızlı.",
+    "description": "SaaS projenizi aylar değil, günler içinde başlatmak için ihtiyacınız olan her şey. Modern web uygulamaları için tam çözüm.",
+    "cta": "Hemen Başla",
+    "secondaryCta": "Dokümantasyonu İncele",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  "features": [
+    {
+      "id": 1,
+      "title": "Şimşek Hızında Performans",
+      "description": "Hız için optimize edildi. İçeriğinizi kullanıcılara milisaniyeler içinde sunarak dönüşüm oranlarını ve kullanıcı deneyimini artırın.",
+      "image": "https://picsum.photos/seed/feat1/800/600",
+      "reverse": false,
+      "items": [
+        { "icon": "⚡", "text": "Global CDN dağıtımı" },
+        { "icon": "🚀", "text": "Optimize edilmiş içerik" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Banka Düzeyinde Güvenlik",
+      "description": "Verileriniz bizimle güvende. İşletmenizi güvende tutmak için endüstri standardı şifreleme ve güvenlik protokolleri kullanıyoruz.",
+      "image": "https://picsum.photos/seed/feat2/800/600",
+      "reverse": true,
+      "items": [
+        { "icon": "🔒", "text": "Uçtan uca şifreleme" },
+        { "icon": "🛡️", "text": "SOC2 Tip II sertifikalı" }
+      ]
+    }
+  ],
+  "testimonials": {
+    "title": "SaaSApp ile Geliştiren Binlerce Kişiye Katılın",
+    "list": [
+      {
+        "quote": "SaaSApp yazılım geliştirme şeklimizi değiştirdi. İnanılmaz derecede hızlı ve güvenilir.",
+        "avatar": "https://i.pravatar.cc/150?img=1",
+        "author": "Alice Johnson",
+        "role": "TechCorp CTO'su"
+      },
+      {
+        "quote": "Bu yıl yaptığımız en iyi yatırım. Geliştirici deneyimi eşsiz.",
+        "avatar": "https://i.pravatar.cc/150?img=2",
+        "author": "Mark Smith",
+        "role": "Kıdemli Mühendis"
+      },
+      {
+        "quote": "Bu platform sayesinde MVP'mizi rekor sürede yayına aldık. Kesinlikle tavsiye ederim!",
+        "avatar": "https://i.pravatar.cc/150?img=3",
+        "author": "Sarah Lee",
+        "role": "Girişim Kurucusu"
+      }
+    ]
+  },
+  "footer": {
+    "brandDesc": "Güçlü bileşenlerimiz, kimlik doğrulama akışlarımız ve kurumsal özelliklerimizle üretime hazır SaaS uygulamaları oluşturun.",
+    "resources": {
+      "title": "Kaynaklar",
+      "helpCenter": "Yardım Merkezi",
+      "docs": "Dokümanlar",
+      "roadmap": "Yol Haritası",
+      "changelog": "Güncellemeler"
+    },
+    "features": {
+      "title": "Özellikler",
+      "affiliates": "İş Ortakları",
+      "portal": "Portal",
+      "jobs": "Kariyer",
+      "sponsors": "Sponsorlar"
+    },
+    "company": {
+      "title": "Şirket",
+      "about": "Hakkımızda",
+      "pricing": "Fiyatlandırma",
+      "careers": "İş İlanları",
+      "blog": "Blog"
+    },
+    "newsletter": {
+      "title": "Bültenimize abone olun",
+      "placeholder": "E-posta adresinizi girin",
+      "button": "Abone Ol",
+      "success": "Bültene başarıyla abone oldunuz!"
+    },
+    "copyright": "Vue 3 ile geliştirildi"
+  },
+  "pricing": {
+    "toggle": {
+      "monthly": "Aylık",
+      "yearly": "Yıllık",
+      "discount": "%20 İndirim"
+    },
+    "billedAnnually": "Yıllık faturalandırılır",
+    "period": "/ay",
+    "mostPopular": "En Popüler",
+    "plans": [
+      {
+        "name": "Başlangıç",
+        "price": 19,
+        "popular": false,
+        "buttonText": "Ücretsiz Başla",
+        "features": [
+          "1 Kullanıcı",
+          "5 Proje",
+          "Topluluk Desteği",
+          "Temel Analitik"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": 49,
+        "popular": true,
+        "buttonText": "Pro'ya Geç",
+        "features": [
+          "5 Kullanıcıya Kadar",
+          "Sınırsız Proje",
+          "Öncelikli Destek",
+          "Gelişmiş Analitik",
+          "Özel Alan Adı"
+        ]
+      },
+      {
+        "name": "Kurumsal",
+        "price": 99,
+        "popular": false,
+        "buttonText": "Satışla İletişime Geç",
+        "features": [
+          "Sınırsız Kullanıcı",
+          "Sınırsız Proje",
+          "7/24 Telefon Desteği",
+          "Özel Entegrasyonlar",
+          "Özel Müşteri Yöneticisi"
+        ]
+      }
+    ]
+  },
+  "pricingPage": {
+    "header": {
+      "title": "Sizin İçin En Doğru Planı Seçin",
+      "subtitle": "Basit, şeffaf ve sürprizsiz fiyatlandırma."
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "subtitle": "Sorularınızın cevaplarını burada bulun."
+    },
+    "faqs": [
+      {
+        "question": "Hizmetiniz güvenli mi?",
+        "answer": "Tüm verileriniz uçtan uca şifrelenir ve en üst düzey güvenlik protokolleriyle korunur."
+      },
+      {
+        "question": "Aboneliğimi nasıl iptal edebilirim?",
+        "answer": "Aboneliğinizi profil ayarlarınızdan istediğiniz zaman kolayca iptal edebilirsiniz."
+      },
+      {
+        "question": "Ücretsiz deneme süresi var mı?",
+        "answer": "Evet, Profesyonel planımızı 14 gün boyunca tamamen ücretsiz deneyebilirsiniz."
+      },
+      {
+        "question": "Planımı daha sonra değiştirebilir miyim?",
+        "answer": "Kesinlikle, ihtiyaçlarınıza göre planınızı istediğiniz zaman yükseltebilir veya düşürebilirsiniz."
+      }
+    ]
+  },
+  "changelogPage": {
+    "title": "Güncellemeler",
+    "behindTheScenes": "Perde arkası:",
+    "releases": [
+      {
+        "date": "1 Nis 2025",
+        "title": "Clippy Entegrasyonu (Beta) 🐤",
+        "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop",
+        "description": "🎉 Yeni üretkenlik asistanınızla tanışın! 1 Nisan Şaka Günü için dost canlısı (ve biraz yaramaz) yardımcınız Clippy'yi tanıtıyoruz. Gününüzü biraz daha aydınlatmak - ve belki biraz daha kaotik hale getirmek için burada. 😜\n\nClippy ipuçları, şakalar ve kontrol panelinizde ara sıra yaptığı danslarla karşınıza çıkar. Endişelenmeyin, onu her zaman bir tıklamayla kapatabilirsiniz (veya sadece nostaljinin tadını çıkarabilirsiniz). 🐤",
+        "featuresTitle": "Özellikler:",
+        "features": [
+          "💡 Yararlı (ve bazen yararsız) ipuçlarıyla açılır",
+          "🕺 Klasik Clippy hareketleriyle kontrol panelinizde canlanır",
+          "😂 İsteğe bağlı rastgele bir şaka yapar",
+          "❌ Tek tıklamayla kapatılabilir",
+          "🥚 Meraklılar için sürpriz yumurtalar"
+        ],
+        "behindTheScenes": "🎬 Ekibimiz Clippy'yi bir günlüğüne hayata geçirmekten çok keyif aldı. Bu özelliğin yapımında hiçbir üretkenlik asistanı zarar görmemiştir.\n\nEndişelenmeyin, Clippy sadece bir gün kalacak. Yoksa kalmayacak mı? 😉"
+      },
+      {
+        "date": "12 Kas 2024",
+        "title": "Güvenlik İyileştirmeleri 🔒",
+        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
+        "description": "🔒 Verileriniz her zamankinden daha güvende. Bu güncelleme, işletmenizi korumaya yönelik süregelen taahhüdümüzü yansıtan yeni güvenlik özellikleri ve uyumluluk iyileştirmeleri getiriyor.\n\nEn çok talep edilen geliştirmeleri sunmak için güvenlik uzmanlarıyla çalıştık ve müşteri geri bildirimlerini dinledik. Güvenlik asla bitmez, ancak bu sürüm büyük bir ileri sıçramadır. 🛡️",
+        "featuresTitle": "İyileştirmeler:",
+        "features": [
+          "🔑 Tüm hesaplar için iki faktörlü kimlik doğrulama (2FA)",
+          "🏢 Kurumsal müşteriler için SSO desteği",
+          "📜 GDPR ve SOC 2 uyumluluk güncellemeleri",
+          "📝 Gelişmiş denetim günlükleri ve erişim kontrolleri",
+          "⏳ Oturum zaman aşımı ve cihaz yönetimi",
+          "🔐 Beklemede ve aktarım sırasında şifrelenmiş veriler"
+        ],
+        "behindTheScenes": "🕵️‍♂️ Tam bir güvenlik denetimi gerçekleştirdik ve otomatik güvenlik açığı taraması uyguladık. Ekibimiz şimdi ek sertifikalar ve düzenli sızma testleri için hazırlanıyor.\n\nİşletmenizi bize emanet ettiğiniz için teşekkür ederiz; güvenlik her zaman en büyük önceliğimiz olacaktır! 🙏"
+      },
+      {
+        "date": "25 Eki 2024",
+        "title": "Halka Açık API Artık Kullanımda 🛠️",
+        "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+        "description": "🛠️ Yepyeni açık API'miz ile kendi entegrasyonlarınızı oluşturun ve iş akışlarınızı otomatikleştirin! Bu, geliştirici topluluğumuz için büyük bir adım ve neler oluşturacağınızı görmek için sabırsızlanıyoruz.\n\nAPI, çalışma alanınızdaki tüm ana kaynaklara güvenli, programatik erişim sağlar. Rutin görevleri otomatikleştirmekten özel kontrol panelleri oluşturmaya kadar olasılıklar sonsuzdur. 🤖",
+        "featuresTitle": "Öne Çıkanlar:",
+        "features": [
+          "🌐 Tüm ana kaynaklar için RESTful uç noktaları",
+          "🔑 Güvenli API anahtarı kimlik doğrulaması",
+          "📚 Kapsamlı dokümantasyon ve kod örnekleri",
+          "📡 Gerçek zamanlı güncellemeler için Webhook desteği",
+          "🚦 Kararlılık için hız sınırlaması ve izleme",
+          "🗣️ Projeleri paylaşmak ve yardım almak için topluluk forumu"
+        ],
+        "behindTheScenes": "👨‍💻 API'nin sağlam ve kullanımı kolay olduğundan emin olmak için ilk kullanıcılarla yakın bir şekilde çalıştık. Dokümanlarımız açık kaynaklıdır; katkılara ve geri bildirimlere açığız!\n\nNeler oluşturduğunuzu görmek için sabırsızlanıyoruz; projelerinizi bizimle paylaşın ve API'mizin bir sonraki sürümünü şekillendirmeye yardımcı olun! 🚀"
+      },
+      {
+        "date": "5 Eki 2024",
+        "title": "Gelişmiş Analitik 📊",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+        "description": "📊 Yeni analitik kontrol panelimiz ile işletmeniz hakkında derinlemesine içgörüler edinin! Bu sürüm, hepsini tek bir yerden izlemenize, ölçmenize ve büyümenize yardımcı olacak güçlü araçlar sunar.\n\nAnalitiği temelden yeniden hayal ettik, eğilimleri görselleştirmeyi, KPI'ları izlemeyi ve ekibinizle rapor paylaşmayı kolaylaştırdık. İster veri uzmanı olun ister yeni başlıyor olun, daha akıllı kararlar almak için ihtiyacınız olan her şeyi bulacaksınız. 🧠",
+        "featuresTitle": "Yeni özellikler:",
+        "features": [
+          "📈 Özelleştirilebilir kontrol panelleri ve raporlar",
+          "⏱️ Gerçek zamanlı kullanıcı ve gelir takibi",
+          "📤 Verileri CSV veya Google E-Tablolara aktarma",
+          "📊 Etkileşimli grafikler ve çizelgelerle eğilimleri görselleştirme",
+          "📧 Temel metrikler için zamanlanmış e-posta raporları",
+          "🔍 Ayrıntılı analiz için detaylandırma filtreleri"
+        ],
+        "behindTheScenes": "🛠️ Ölçeklenebilir bulut altyapısı kullanarak yeni bir analitik motoru oluşturduk, bu da hızlı sorgular ve güvenilir veriler sağlar. Yakında daha fazla entegrasyon ve gelişmiş görselleştirme bekleyin!\n\nHangi içgörüleri keşfettiğinizi görmek için heyecanlıyız; bununla neler oluşturduğunuzu bize bildirin! 🚀"
+      },
+      {
+        "date": "15 Eyl 2024",
+        "title": "Performans Artışı ⚡️",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+        "description": "⚡ SaaS platformumuz artık çok daha hızlı! Bu güncelleme tamamen hız, duyarlılık ve herkes için daha sorunsuz bir deneyimle ilgili. Performansın ne kadar önemli olduğunu biliyoruz, bu yüzden bu sürüm için onu en büyük önceliğimiz haline getirdik.\n\nArka uç altyapımızı optimize etmekten ön ucu ince ayar yapmaya kadar uygulamanın her parçası gözden geçirildi ve iyileştirildi. Platform genelinde daha hızlı yükleme süreleri, daha hızlı gezinme ve daha akıcı bir his fark edeceksiniz. 🚀",
+        "featuresTitle": "İyileştirmeler:",
+        "features": [
+          "🚄 2 kat daha hızlı kontrol paneli yükleme süreleri",
+          "⏱️ %40 azaltılmış API yanıt gecikmesi",
+          "🖼️ Tüm cihazlar için optimize edilmiş görüntü teslimi ve önbelleğe alma",
+          "🌀 Sayfalar arası daha pürüzsüz geçişler ve gezinme",
+          "🧠 Mobil ve masaüstünde daha düşük bellek kullanımı"
+        ],
+        "behindTheScenes": "🛠️ Daha akıllı önbelleğe alma, tembel yükleme ve veritabanı indekslemeyi tanıttık. Ekibimiz ayrıca yavaşlamaları sizden önce yakalamak için yeni izleme araçları kurdu.\n\nFarkı hissedip hissetmediğinizi ve işleri hızlandırmamızı istediğiniz başka bir yer olup olmadığını bize bildirin! 💬"
+      },
+      {
+        "date": "30 Ağu 2024",
+        "title": "Mobil Uygulama Beta 📱",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+        "description": "📱 SaaS kontrol panelinizi her yere taşıyın! Mobil uygulama beta sürümümüz artık iOS ve Android için yayında, çalışma alanınızı cebinize getiriyor. Nerede olursanız olun üretken kalın ve bağlantıda kalın.\n\nUygulamayı küçük ekranlarda hız ve kullanılabilirlik için temelden tasarladık. İster trende raporları kontrol edin, ister hareket halindeyken bildirimler alın, mobil uygulama sizi döngüde tutar. 🚆",
+        "featuresTitle": "Özellikler:",
+        "features": [
+          "📊 Hareket halindeyken kontrol panellerine ve raporlara erişin",
+          "🔔 Önemli güncellemeler için anında iletme bildirimleri",
+          "📴 Kesintisiz üretkenlik için çevrimdışı destek",
+          "🤏 Dokunmatik ve küçük ekranlar için optimize edildi",
+          "🛡️ Güvenli biyometrik giriş (Face ID ve Touch ID)",
+          "⚡ Ortak görevler için hızlı eylemler"
+        ],
+        "behindTheScenes": "🧑‍💻 Uygulamayı hem iOS hem de Android'de yerel bir his sağlamak için en son platformlar arası teknolojiyi kullanarak oluşturduk. Beta sırasındaki geri bildirimleriniz, yeni özellikleri geliştirmemize ve önceliklendirmemize yardımcı olacak.\n\nTam sürüme hazırlanırken geri bildirimlerinizi duymayı çok isteriz! 🚀"
+      },
+      {
+        "date": "20 Tem 2024",
+        "title": "Bolca Entegrasyon",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
+        "description": "🔌 SaaS çalışma alanınızı sevdiğiniz araçlara bağlayın! Yeni entegrasyonlarımız, iş akışınızı otomatikleştirmeyi ve genişletmeyi kolaylaştırarak size zaman kazandırır ve manuel çalışmayı azaltır.\n\nBu sürüm sadece bir başlangıç — entegrasyonlar artık platformumuzun birinci sınıf bir parçası. En çok talep edilen araçlarla başladık ve geri bildirimlerinize göre daha fazlasını ekleyeceğiz. 🗂️",
+        "featuresTitle": "Yeni entegrasyonlar:",
+        "features": [
+          "💬 Slack: Kanallarınızda gerçek zamanlı bildirimler ve güncellemeler alın",
+          "🐙 GitHub: Daha iyi izlenebilirlik için taahhütleri ve çekme isteklerini projelerinize bağlayın",
+          "🤖 Zapier: 5.000'den fazla uygulama ile tekrarlayan görevleri otomatikleştirin",
+          "📅 Google Takvim: Önemli tarihleri ve son teslim tarihlerini senkronize edin"
+        ],
+        "behindTheScenes": "🔧 Bağlantı eklemeyi ve yönetmeyi sorunsuz hale getirmek için yeni bir entegrasyon çerçevesi oluşturduk. API'miz artık daha sağlam ve daha fazla seçenek için bir entegrasyon pazarı üzerinde çalışıyoruz.\n\nDaha fazla entegrasyon yolda — bir sonrakini hangisini istediğinizi bize bildirin! 📨"
+      },
+      {
+        "date": "15 Haz 2024",
+        "title": "Karanlık Mod 🌙",
+        "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop",
+        "description": "🌙 Yeni Karanlık Modumuz ile gözlerinizi dinlendirin! Birçok talepten sonra, gece veya gündüz göz yormayan şık ve modern bir görünüm sunmaktan heyecan duyuyoruz.\n\nTemaları değiştirmek artık zahmetsiz ve her bileşen kontrast ve erişilebilirlik için dikkatlice ayarlandı. İster gece geç saatlere kadar çalışın ister sadece daha koyu bir paleti tercih edin, bu güncelleme tam size göre. 🌓",
+        "featuresTitle": "İyileştirmeler:",
+        "features": [
+          "🌗 Üst bilgide tek tıklamayla tema geçişi",
+          "🖥️ Sistem tercihlerine otomatik uyum",
+          "🧩 Nuxt UI bileşenleriyle tam entegre",
+          "♿ Erişilebilirlik ve kontrast için optimize edildi",
+          "💾 Cihazlar arasında kalıcı tema tercihi",
+          "✨ Zarif bir his için ince animasyonlar"
+        ],
+        "behindTheScenes": "🎨 Renk sistemimizi yeniden düzenledik ve tutarlı bir deneyim sağlamak için düzinelerce cihazda test ettik. Yakında daha fazla tema özelleştirme seçeneği bekleyin!\n\nYeni görünümü nasıl bulduğunuzu ve iyileştirme için herhangi bir alan fark edip etmediğinizi bize bildirin! 💬"
+      },
+      {
+        "date": "10 May 2024",
+        "title": "Ekipler & İşbirliği",
+        "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
+        "description": "🤝 İşbirliği artık daha kolay! Ekipler ile artık daha verimli ve güvenli bir şekilde birlikte çalışabilirsiniz. Bu güncelleme tamamen kuruluşların üyelerini güvenle ölçeklendirmesi ve yönetmesiyle ilgili.\n\nGeri bildirimlerinizi dinledik ve iş arkadaşlarını davet etmek, rolleri atamak ve etkinliği izlemek için esnek bir sistem oluşturduk. İster yeni çalışanları işe alın, ister departmanlar arası işbirliği yapın, Ekipler yanınızda. 👥",
+        "featuresTitle": "Yenilikler:",
+        "features": [
+          "✉️ E-posta veya paylaşılabilir bağlantı yoluyla ekip üyelerini davet edin",
+          "🛡️ Ayrıntılı erişim kontrolü için roller (Yönetici, Üye, Görüntüleyici) atayın",
+          "🔔 Gerçek zamanlı etkinlik takibi ve bildirimleri",
+          "📊 Daha iyi içgörüler için ekip tabanlı kontrol panelleri ve analitikler",
+          "🔄 Birden fazla ekip ve kuruluş arasında kolay geçiş"
+        ],
+        "behindTheScenes": "🏗️ Her boyuttaki kuruluşu desteklemek için kullanıcı yönetim sistemimizi yeniden tasarladık. Bu, SSO, gelişmiş izinler ve denetim günlükleri gibi gelecekteki özelliklerin yolunu açıyor.\n\nStart-up'lar ve büyüyen işletmeler için mükemmel. Deneyin ve iş akışınızı kolaylaştırın! 🚀"
+      },
+      {
+        "date": "1 Nis 2024",
+        "title": "SaaS Lansmanı 🚀",
+        "image": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=800&auto=format&fit=crop",
+        "description": "🚀 SaaS platformumuzun halka açık lansmanını duyurmaktan heyecan duyuyoruz! Bu kilometre taşı, aylar süren tasarım, geliştirme ve ilk kullanıcılarımızdan gelen geri bildirimlerin sonucudur. Hedefimiz: işinizi çevrimiçi başlatmayı, yönetmeyi ve büyütmeyi her zamankinden daha kolay hale getirmek.\n\nİlk kod satırından itibaren hız, güvenilirlik ve keyifli bir kullanıcı deneyimine odaklandık. İster tek başınıza bir kurucu olun ister büyüyen bir ekip, platformumuz sizinle birlikte ölçeklenmek üzere tasarlanmıştır. 💡",
+        "featuresTitle": "Öne Çıkanlar:",
+        "features": [
+          "⚡ Zahmetsiz gezinme için hızlı, duyarlı kontrol paneli kullanıcı arayüzü",
+          "🔐 Sorunsuz işe alım ve güvenli kimlik doğrulama",
+          "💳 Stripe entegrasyonu ile yerleşik faturalandırma ve abonelik yönetimi",
+          "🎨 Nuxt UI tarafından desteklenen modern tasarım sistemi",
+          "📱 Mobil uyumlu ve ilk günden itibaren erişilebilir",
+          "📚 Yararlı belgeler ve uygulama içi ipuçları"
+        ],
+        "behindTheScenes": "🛠️ Kesintisiz çalışma süresi ve performans sağlamak için sağlam bir altyapıya yatırım yaptık. Ekibimiz ayrıca otomatik test ve sürekli dağıtım da kurdu, böylece her zaman en son özelliklere ve düzeltmelere sahip olacaksınız.\n\nDaha yeni başlıyoruz — geri bildirimleriniz platformumuzun geleceğini şekillendirmeye yardımcı olacak. Ne düşündüğünüzü ve bir sonraki adımda ne görmek istediğinizi bize bildirin! ✨"
+      }
+    ]
+  },
+  "docs": {
+    "searchPlaceholder": "Ara...",
+    "categories": {
+      "gettingStarted": "Başlarken",
+      "essentials": "Temeller"
+    },
+    "pages": {
+      "introduction": "Giriş",
+      "installation": "Kurulum",
+      "usage": "Kullanım",
+      "markdown": "Markdown",
+      "codeblocks": "Kod Blokları",
+      "prose": "Metin Düzeni",
+      "images": "Görseller"
+    },
+    "toc": {
+      "title": "Bu sayfada",
+      "introduction": {
+        "keyFeatures": "Temel Özellikler"
+      },
+      "installation": {
+        "quickStart": "Hızlı Başlangıç"
+      },
+      "usage": {
+        "writingContent": "İçerik yazma"
+      },
+      "markdown": {
+        "titles": "Başlıklar",
+        "subtitles": "Alt Başlıklar",
+        "textFormatting": "Metin Biçimlendirme",
+        "links": "Bağlantılar",
+        "internalLinks": "İç bağlantılar",
+        "lists": "Listeler",
+        "unordered": "Sırasız",
+        "ordered": "Sıralı",
+        "nested": "İç içe",
+        "tables": "Tablolar",
+        "blockquotes": "Alıntılar",
+        "singleline": "Tek satır",
+        "multiline": "Çok satırlı"
+      },
+      "codeblocks": {
+        "basic": "Temel",
+        "inlineCode": "Satır İçi Kod",
+        "codeBlocks": "Kod Blokları",
+        "highlightLine": "Satır Vurgulama",
+        "advanced": "Gelişmiş",
+        "codeGroup": "Kod Grubu",
+        "codeTree": "Kod Ağacı",
+        "codePreview": "Kod Önizleme",
+        "codeCollapse": "Kod Daraltma"
+      },
+      "prose": {
+        "accordion": "Akordeon",
+        "badge": "Rozet",
+        "callout": "Uyarı",
+        "card": "Kart",
+        "cardGroup": "Kart Grubu",
+        "collapsible": "Daraltılabilir",
+        "field": "Alan",
+        "fieldGroup": "Alan Grubu",
+        "icon": "İkon",
+        "kbd": "Tuş",
+        "tabs": "Sekmeler",
+        "steps": "Adımlar"
+      },
+      "images": {
+        "image": "Görsel",
+        "usingMarkdown": "Markdown Kullanımı",
+        "usingEmbeds": "Gömme (Embed) Kullanımı",
+        "embedsAndHtml": "Gömme ve HTML elementleri"
+      }
+    },
+    "searchDesc": {
+      "introduction": "Nuxt UI SaaS şablonuna hoş geldiniz.",
+      "installation": "Şablon ile hızlıca başlayın.",
+      "usage": "Dokümantasyonu nasıl yazacağınızı öğrenin.",
+      "markdown": "Metin, başlık ve stiller.",
+      "codeblocks": "Kod parçacıklarını görüntüleyin.",
+      "prose": "Etkileşimli arayüz bileşenleri."
+    },
+    "nav": {
+      "previous": "Önceki",
+      "next": "Sonraki"
+    },
+    "install": {
+      "subtitle": "Nuxt UI SaaS şablonu ile çalışmaya başlayın.",
+      "quickStartTitle": "Hızlı Başlangıç",
+      "startFresh": "Yepyeni bir projeye şununla başlayabilirsiniz:",
+      "terminal": "Terminal",
+      "orCreate": "veya GitHub üzerinden yeni bir depo (repository) oluşturun:",
+      "steps": {
+        "step1": "Şu adresi açın:",
+        "step2": "<strong>Use this template (Bu şablonu kullan)</strong> butonuna tıklayın",
+        "step3": "Depo adını girin ve <strong>Create repository from template</strong> butonuna tıklayın",
+        "step4": "Yeni deponuzu klonlayın",
+        "step5": "Favori paket yöneticinizle bağımlılıkları yükleyin",
+        "step6": "Geliştirme sunucusunu başlatın"
+      },
+      "thatsIt": "İşte bu kadar! Artık dokümantasyonunuzu <code class=\"inline-code\">content/</code> dizini içinde yazmaya başlayabilirsiniz 🚀"
+    },
+    "intro": {
+      "subtitle": "Nuxt UI SaaS şablonuna hoş geldiniz.",
+      "p1": "Bu şablon, dakikalar içinde güzel ve duyarlı Nuxt uygulamaları oluşturmak için <a href=\"#\">Nuxt UI</a> ile yapılmış kullanıma hazır bir SaaS şablonudur.",
+      "p2": "Bu şablon özelleştirilebilir bir açılış sayfası, fiyatlandırma sayfası, dokümantasyon, blog ve kimlik doğrulama sayfaları (giriş, kayıt) içerir.",
+      "keyFeaturesTitle": "Temel Özellikler",
+      "featuresDesc": "Bu şablon, dokümantasyon yönetimini kolaylaştırmak için tasarlanmış bir dizi özellik içerir:",
+      "features": {
+        "nuxt": "<strong>Nuxt Altyapısı:</strong> Optimum performans için en son Nuxt framework'ünü kullanır.",
+        "ui": "<strong>Nuxt UI ile Geliştirildi:</strong> Kapsamlı bir UI bileşenleri paketini entegre eder.",
+        "mdc": "<strong>Nuxt Content ile MDC Sözdizimi:</strong> Dinamik içerik için bileşen entegrasyonlu Markdown'ı destekler.",
+        "sidebar": "<strong>Otomatik Oluşturulan Kenar Çubuğu Navigasyonu:</strong> İçerik yapısından navigasyonu otomatik olarak oluşturur.",
+        "search": "<strong>Tam Metin Arama:</strong> İçerik keşfi için yerleşik arama işlevi içerir.",
+        "typography": "<strong>Optimize Edilmiş Tipografi:</strong> Gelişmiş okunabilirlik için rafine edilmiş tipografi sunar.",
+        "darkMode": "<strong>Karanlık Mod:</strong> Kullanıcı tercihi için karanlık mod desteği sunar.",
+        "extensive": "<strong>Kapsamlı İşlevsellik:</strong> Yeteneklerini tam olarak görmek için şablonu keşfedin."
+      }
+    },
+    "usage": {
+      "subtitle": "Nasıl yazacağınızı ve özelleştireceğinizi öğrenin.",
+      "writingContentTitle": "İçerik yazma",
+      "p1": "Tüm içeriğiniz <code class=\"inline-code\">content/</code> dizininde yer alır. Bu şablon, Markdown dosyalarınızı sayfalara dönüştürmek için Nuxt Content kullanır.",
+      "p2": "İçeriğinizi oluşturmak için standart Markdown sözdizimini kullanabilirsiniz. Vue bileşenleri de MDC sözdizimi kullanılarak doğrudan markdown içine gömülebilir.",
+      "markdownTitle": "Markdown Sözdizimi",
+      "markdownDesc": "Markdown içeriğini nasıl yazacağınızı öğrenin."
+    },
+    "markdown": {
+      "titlesTitle": "Başlıklar",
+      "titlesDesc": "Ana bölümleri tanıtmak için başlıkları kullanın. Dokümantasyonunuzu yapılandırır ve kullanıcıların içerikte gezinmesine yardımcı olurlar.",
+      "subtitlesTitle": "Alt Başlıklar",
+      "subtitlesDesc": "Bölümleri daha da ayırmak için alt başlıkları kullanın. Daha iyi okunabilirlik için ayrıntılı bir içerik hiyerarşisi oluştururlar.",
+      "anchorDesc": "Her başlık ve alt başlık bir çapa oluşturur ve içindekiler tablosunda otomatik olarak görünür.",
+      "formattingTitle": "Metin Biçimlendirme",
+      "formattingDesc": "Nuxt UI, çoğu Markdown biçimlendirme seçeneğini destekler.",
+      "tableStyle": "Stil",
+      "tableHow": "Nasıl kullanılır",
+      "tableResult": "Sonuç",
+      "bold": "Kalın",
+      "italic": "Eğik",
+      "strike": "Üstü Çizili",
+      "combineDesc": "Daha zengin metin stilleri ve görsel vurgu için biçimlendirmeleri birleştirin.",
+      "boldItalic": "Kalın Eğik",
+      "boldStrike": "Kalın Üstü Çizili",
+      "italicStrike": "Eğik Üstü Çizili",
+      "mathDesc": "Üsler, indisler veya matematiksel gösterimler için HTML <code>&lt;sup&gt;</code> ve <code>&lt;sub&gt;</code> etiketlerini kullanın.",
+      "sup": "Üst Simge",
+      "sub": "Alt Simge",
+      "linksTitle": "Bağlantılar",
+      "linksDesc": "Bağlantılar, dokümantasyonunuzun farklı bölümlerini ve dış kaynakları birbirine bağlar. Bir bağlantı oluşturmak için, bağlantı metnini köşeli parantez <code>[]()</code> içine alın.",
+      "internalLinksTitle": "İç bağlantılar",
+      "internalLinksDesc": "Dokümantasyonunuz içinde bağlantı vermek için, <code>/getting-started/installation</code> gibi kök dizinli yollar kullanın.",
+      "listsTitle": "Listeler",
+      "listsDesc": "İlgili öğeleri yapılandırılmış, okunabilir bir biçimde düzenleyin. Markdown, sırasız, sıralı ve iç içe listeleri destekler.",
+      "unorderedTitle": "Sırasız",
+      "unorderedDesc": "Belirli bir sırası olmayan öğeler için sırasız listeler kullanın. Her öğeye bir <code>-</code> sembolü ile başlayın.",
+      "listItem1": "Ben bir liste öğesiyim.",
+      "listItem2": "Ben başka bir liste öğesiyim.",
+      "listItem3": "Ben son liste öğesiyim.",
+      "orderedTitle": "Sıralı",
+      "orderedDesc": "Öğelerin sırası önemli olduğunda sıralı listeleri kullanın. Her öğeye bir sayı ile başlayın.",
+      "nestedTitle": "İç İçe",
+      "nestedDesc": "Alt öğeler içeren hiyerarşik listeler oluşturun. Alt öğeleri dört boşlukla girintileyin.",
+      "nestedItem1": "Ben iç içe bir liste öğesiyim.",
+      "nestedItem2": "Ben başka bir iç içe liste öğesiyim.",
+      "tablesTitle": "Tablolar",
+      "tablesDesc": "Yapılandırılmış verileri satır ve sütunlar halinde açıkça sunun. Tablolar, verileri karşılaştırmak veya özellikleri listelemek için idealdir.",
+      "tableProp": "Özellik",
+      "tableDefault": "Varsayılan",
+      "tableType": "Tür",
+      "blockquotesTitle": "Alıntılar",
+      "blockquotesDesc": "Önemli alıntıları, atıfları veya vurgulanan metni öne çıkarın.",
+      "singlelineTitle": "Tek Satırlı",
+      "multilineTitle": "Çok Satırlı",
+      "quote1": "Nuxt UI, güzel ve erişilebilir kullanıcı arayüzleri oluşturmak için tasarlanmış Vue bileşenleri, composable'lar ve yardımcı programların bir koleksiyonudur.",
+      "quote1Short": "Nuxt UI, Vue bileşenlerinden oluşan bir koleksiyondur...",
+      "quote2": "Nuxt UI ile güzel, duyarlı ve erişilebilir Vue uygulamaları oluşturun.",
+      "quote2Short": "Güzel, duyarlı ve erişilebilir uygulamalar oluşturun..."
+    },
+    "codeblocks": {
+      "basicTitle": "Temel",
+      "inlineCodeTitle": "Satır İçi Kod",
+      "inlineCodeDesc": "Metin paragrafları içinde kod parçacıklarını görüntülemek için satır içi kodu kullanın. Doğrudan cümleler içindeki kod öğelerine başvurmak için idealdir.",
+      "codeBlocksTitle": "Kod Blokları",
+      "codeBlocksDesc": "Sözdizimi vurgulamalı çok satırlı kod parçacıklarını görüntülemek için kod bloklarını kullanın. Kod blokları, kod örneklerini net bir şekilde sunmak için gereklidir.",
+      "filenameDesc": "Bir kod bloğu yazarken, kod bloğunun üstünde görüntülenecek bir dosya adı belirtebilirsiniz. Uzantıya veya ada bağlı olarak otomatik olarak bir simge görüntülenecektir.",
+      "copyBtnDesc": "Her kod bloğunda, kodu panonuza kopyalayacak yerleşik bir kopyala düğmesi bulunur.",
+      "highlightLineTitle": "Satır Vurgulama",
+      "highlightLineDesc": "Kod satırlarını vurgulamak için, vurgulamak istediğiniz satır numaralarının etrafına <code class=\"inline-code\">{}</code> ekleyin.",
+      "advancedTitle": "Gelişmiş",
+      "codeGroupTitle": "Kod Grubu (CodeGroup)",
+      "codeGroupDesc": "Kod bloklarını <code class=\"inline-code\">code-group</code> kullanarak sekmelerde gruplandırın. Birden fazla paket yöneticisini göstermek için mükemmeldir.",
+      "codeTreeTitle": "Kod Ağacı (CodeTree)",
+      "codeTreeDesc": "<code class=\"inline-code\">code-tree</code> kullanarak kod bloklarını bir dosya ağacı görünümünde görüntüleyin.",
+      "codePreviewTitle": "Kod Önizleme (CodePreview)",
+      "codeCollapseTitle": "Kod Daraltma (CodeCollapse)",
+      "expandCode": "Kodu genişlet",
+      "collapseCode": "Kodu daralt"
+    },
+    "prose": {
+      "subtitle": "İçeriğinizi yapılandırmanıza yardımcı olacak bileşenler.",
+      "accordionDesc": "Daraltılabilir içerik bölümleri oluşturmak için <code class=\"inline-code\">accordion</code> ve <code class=\"inline-code\">accordion-item</code> kullanın. Akordeonlar SSS'leri, genişletilebilir ayrıntıları veya gruplanmış bilgileri etkileşimli bir şekilde düzenlemek için kullanışlıdır.",
+      "accQ1": "Nuxt UI v3'e yükseltme yaparken temel hususlar nelerdir?",
+      "accA1": "v3'e geçiş, yeni bileşen yapıları, güncellenmiş tema yaklaşımları ve revize edilmiş TypeScript tanımları dahil olmak üzere önemli değişiklikler içerir. Geliştirme ortamında kapsamlı testlerle başlayan dikkatli, artımlı bir yükseltme süreci öneriyoruz.",
+      "accQ2": "Nuxt UI v3, bağımsız Vue projeleriyle uyumlu mu?",
+      "accA2": "Nuxt UI artık Vue ile uyumlu! Başlamak için <a href=\"#\" class=\"primary-link\">kurulum kılavuzunu</a> takip edebilirsiniz.",
+      "badgeDesc": "Durum göstergelerini veya etiketleri görüntülemek için rozet (badge) kullanın. Rozetler, içeriğinizdeki sürüm numaralarını, durumları veya kategorileri vurgulamak için harikadır.",
+      "calloutDesc1": "Önemli bağlamsal bilgileri vurgulamak için callout (uyarı) kullanın. Callout'lar notlara, ipuçlarına, uyarılara veya dikkat edilmesi gerekenlere dikkat çekerek temel bilgilerin öne çıkmasını sağlar.",
+      "calloutDesc2": "Önceden tanımlanmış semantik stiller için <code class=\"inline-code\">icon</code> ve <code class=\"inline-code\">color</code> propları ile özelleştirin veya <code class=\"inline-code\">note</code>, <code class=\"inline-code\">tip</code>, <code class=\"inline-code\">warning</code>, <code class=\"inline-code\">caution</code> kısayollarını kullanın.",
+      "calloutBase": "Bu, tam <strong>markdown</strong> destekli bir <code class=\"inline-code\">callout</code> bileşenidir.",
+      "calloutNote": "İşte sizin için bazı ek bilgiler.",
+      "calloutTip": "İşte faydalı bir öneri.",
+      "calloutWarn": "Beklenmeyen sonuçları olabileceğinden bu işleme dikkat edin.",
+      "calloutCaut": "Bu işlem geri alınamaz.",
+      "cardDesc1": "İçerik bloklarını vurgulamak için <code class=\"inline-code\">card</code> kullanın. Kartlar; özellikleri, kaynakları veya ilgili bilgileri görsel olarak farklı ve etkileşimli kaplarda sergilemek için kullanışlıdır.",
+      "cardDesc2": "<code class=\"inline-code\">title</code>, <code class=\"inline-code\">icon</code> ve <code class=\"inline-code\">color</code> propları ile özelleştirin. Kartlar, gezinme için <code class=\"inline-code\">&lt;NuxtLink&gt;</code> özellikleri kullanılarak bağlantı (link) görevi de görebilir.",
+      "cardDash": "Çok sütunlu düzene sahip bir gösterge paneli.",
+      "cardGroupDesc": "Kartları bir ızgara (grid) düzeninde düzenlemek için <code class=\"inline-code\">card-group</code> kullanın. <code class=\"inline-code\">card-group</code>, kart koleksiyonlarını yapılandırılmış, görsel olarak çekici ve duyarlı bir ızgarada görüntülemek için idealdir.",
+      "cardSaas": "Açılış, fiyatlandırma, dokümanlar ve blog içeren bir şablon.",
+      "cardDocs": "<code class=\"inline-code\">@nuxt/content</code> içeren bir dokümantasyon.",
+      "cardLanding": "Başlangıç noktası olarak kullanabileceğiniz bir açılış sayfası.",
+      "colDesc": "İçerik bölümlerini gizlemek ve göstermek için <code class=\"inline-code\">collapsible</code> kullanın. <code class=\"inline-code\">collapsible</code> isteğe bağlı ayrıntıları, teknik özellikleri veya daha az sıklıkta ihtiyaç duyulan bilgileri göstermek için idealdir.",
+      "colShow": "Özellikleri göster",
+      "fieldDesc": "Belirli bir alanı, özelliği veya parametreyi açıklamak için <code class=\"inline-code\">field</code> kullanın. <code class=\"inline-code\">field</code> bileşenleri, API parametrelerini, bileşen proplarını veya yapılandırma seçeneklerini belgelemek için mükemmeldir.",
+      "fieldReq": "gerekli",
+      "fieldDemo": "<code class=\"inline-code\">description</code> tam <strong>markdown</strong> desteğiyle prop olarak veya varsayılan slot'ta ayarlanabilir.",
+      "fieldGroupDesc": "İlgili alanları bir listede gruplandırmak için <code class=\"inline-code\">field-group</code> kullanın. <code class=\"inline-code\">field-group</code>, birden fazla ilgili alan veya özellik için belgeleri düzenlemeye ve yapılandırmaya yardımcı olur.",
+      "fgAnalyt": "Varsayılan olarak <code class=\"inline-code\">false</code> - Projeniz için analitiği etkinleştirir (yakında).",
+      "fgBlob": "Varsayılan olarak <code class=\"inline-code\">false</code> - Resimler, videolar ve daha fazlası gibi statik varlıkları depolamak için blob depolamayı etkinleştirir.",
+      "fgCache": "Varsayılan olarak <code class=\"inline-code\">false</code> - Nitro'nun <code class=\"inline-code\">cachedEventHandler</code> ve <code class=\"inline-code\">cachedFunction</code> işlevlerini kullanarak sunucu yönlendirme yanıtlarınızı veya işlevlerinizi önbelleğe almak için önbellek depolamasını etkinleştirir.",
+      "fgDb": "Varsayılan olarak <code class=\"inline-code\">false</code> - Uygulamanızın verilerini depolamak için SQL veritabanını etkinleştirir.",
+      "iconDesc": "İkon kitaplıklarından ikon eklemek için <code class=\"inline-code\">icon</code> kullanın. İkonlar görsel ipuçları sağlar ve dokümantasyonunuzun kullanıcı arayüzünü geliştirir.",
+      "kbdDesc": "Klavye tuşlarını veya kısayollarını görüntülemek için <code class=\"inline-code\">kbd</code> kullanın. <code class=\"inline-code\">kbd</code> bileşenleri, talimatlar veya komut referansları için klavye girişlerini açıkça belirtir.",
+      "tabsDesc": "İçeriği sekmeli arayüzler halinde düzenlemek için <code class=\"inline-code\">tabs</code> ve <code class=\"inline-code\">tabs-item</code> kullanın. Sekmeler, içeriği mantıksal bölümlere ayırmak, içerik keşfedilebilirliğini ve organizasyonunu iyileştirmek için etkilidir.",
+      "stepsDesc1": "Belge başlıklarından adım adım kılavuzlar oluşturmak için <code class=\"inline-code\">steps</code> kullanın. <code class=\"inline-code\">steps</code> bileşeni başlıkları otomatik olarak numaralandırarak süreçler ve eğitimler için numaralandırılmış bir kılavuz oluşturur.",
+      "stepsDesc2": "Adım adım kılavuza eklenecek başlık seviyesini tanımlamak için <code class=\"inline-code\">level</code> prop'unu ayarlayın.",
+      "step1": "Nuxt UI modülünü <code class=\"inline-code\">nuxt.config.ts</code> dosyanıza ekleyin",
+      "step2": "CSS'inize Tailwind CSS ve Nuxt UI'ı içe aktarın"
+    },
+    "images": {
+      "subtitle": "Görsel, video ve diğer HTML öğelerini ekleyin.",
+      "imageTitle": "Görsel",
+      "usingMarkdownTitle": "Markdown Kullanımı",
+      "usingMarkdownDesc": "Görselleri standart Markdown sözdizimini kullanarak görüntüleyin. Markdown görsellerinin temel görsel gösterimi için uygulanması kolaydır.",
+      "imgAlt": "Nuxt Sosyal Görseli",
+      "imageCallout": "Eğer <code class=\"inline-code\">@nuxt/image</code> yüklüyse, yerel <code class=\"inline-code\">img</code> etiketi yerine <code class=\"inline-code\">&lt;NuxtImg&gt;</code> bileşeni kullanılacaktır.",
+      "usingEmbedsTitle": "Gömme (Embed) Kullanımı",
+      "usingEmbedsDesc": "Daha fazla görsel özelleştirmesi için gömme (embed) kullanın. Gömme, boyut ve stil gibi görsel nitelikleri üzerinde daha fazla kontrol sunar.",
+      "embedsHtmlTitle": "Gömme (Embed) ve HTML öğeleri",
+      "embedsHtmlDesc": "Gömme, video ve iframe gibi çeşitli HTML öğelerinin eklenmesine olanak tanır. Bu özellik, dokümantasyon yeteneklerini etkileşimli ve multimedya içeriği kapsayacak şekilde genişletir.",
+      "iframeTitle": "YouTube video oynatıcı"
+    },
+    "auth": {
+      "login": {
+        "title": "Tekrar Hoş Geldiniz",
+        "subtitle": "Devam etmek için hesabınıza giriş yapın",
+        "submitBtn": "Giriş Yap",
+        "footerText": "Hesabınız yok mu?",
+        "footerLink": "Kayıt ol"
+      },
+      "emailLabel": "E-posta adresi",
+      "emailPlaceholder": "isim@ornek.com",
+      "passwordLabel": "Şifre",
+      "passwordPlaceholder": "Şifrenizi girin",
+      "forgotPassword": "Şifrenizi mi unuttunuz?",
+      "orContinue": "Veya şununla devam edin",
+      "google": "Google",
+      "github": "GitHub",
+      "register": {
+        "title": "Hesap Oluşturun",
+        "subtitle": "Projenize saniyeler içinde başlayın.",
+        "nameLabel": "Ad Soyad",
+        "namePlaceholder": "Ahmet Yılmaz",
+        "emailPlaceholder": "isim@sirket.com",
+        "passwordPlaceholder": "En az 8 karakter",
+        "confirmPasswordLabel": "Şifreyi Onayla",
+        "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
+        "submitBtn": "Kayıt Ol",
+        "footerText": "Zaten bir hesabınız var mı?",
+        "footerLink": "Giriş Yap",
+        "errors": {
+          "passwordMismatch": "Şifreler eşleşmiyor.",
+          "passwordWeak": "Şifre en az 8 karakter uzunluğunda olmalı, 1 büyük harf, 1 küçük harf ve 1 özel karakter içermelidir."
+        }
+      }
+    },
+    "register": {
+      "title": "Hesap Oluşturun",
+      "subtitle": "Projenize saniyeler içinde başlayın.",
+      "nameLabel": "Ad Soyad",
+      "namePlaceholder": "Ahmet Yılmaz",
+      "emailPlaceholder": "isim@sirket.com",
+      "passwordPlaceholder": "En az 8 karakter",
+      "confirmPasswordLabel": "Şifreyi Onayla",
+      "confirmPasswordPlaceholder": "Şifrenizi onaylayın",
+      "submitBtn": "Kayıt Ol",
+      "footerText": "Zaten bir hesabınız var mı?",
+      "footerLink": "Giriş Yap",
+      "errors": {
+        "passwordMismatch": "Şifreler eşleşmiyor.",
+        "passwordWeak": "Şifre en az 8 karakter uzunluğunda olmalı, 1 büyük harf, 1 küçük harf ve 1 özel karakter içermelidir."
+      }
+    }
+  },
+  "blog": {
+    "title": "Our Blog",
+    "subtitle": "Latest updates, guides, and stories from our team.",
+    "searchPlaceholder": "Search articles...",
+    "searchBtn": "Search",
+    "loading": "Loading articles...",
+    "noArticles": "No articles found for",
+    "clearSearch": "Clear Search",
+    "readArticle": "Read article",
+    "prev": "Prev",
+    "next": "Next"
+  }
+}

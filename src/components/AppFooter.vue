@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const email = ref('')
 
 const handleSubscribe = () => {
   if (email.value) {
     console.log('Subscribed:', email.value)
-    alert('Bültene başarıyla abone oldunuz!')
+    alert(t('footer.newsletter.success'))
     email.value = ''
   }
 }
@@ -19,45 +21,45 @@ const handleSubscribe = () => {
         <div class="footer-brand">
           <div class="logo">SaaS<span>App</span></div>
           <p class="brand-desc">
-            Build production-ready SaaS applications with our powerful components, authentication flows, and enterprise features.
+            {{ t('footer.brandDesc') }}
           </p>
         </div>
         
         <div class="footer-links-grid">
           <div class="link-column">
-            <h3>Resources</h3>
-            <a href="#">Help center</a>
-            <router-link to="/docs">Docs</router-link>
-            <a href="#">Roadmap</a>
-            <router-link to="/changelog">Changelog</router-link>
+            <h3>{{ t('footer.resources.title') }}</h3>
+            <a href="#">{{ t('footer.resources.helpCenter') }}</a>
+            <router-link :to="`/${locale}/docs`">{{ t('footer.resources.docs') }}</router-link>
+            <a href="#">{{ t('footer.resources.roadmap') }}</a>
+            <router-link :to="`/${locale}/changelog`">{{ t('footer.resources.changelog') }}</router-link>
           </div>
           
           <div class="link-column">
-            <h3>Features</h3>
-            <a href="#">Affiliates</a>
-            <a href="#">Portal</a>
-            <a href="#">Jobs</a>
-            <a href="#">Sponsors</a>
+            <h3>{{ t('footer.features.title') }}</h3>
+            <a href="#">{{ t('footer.features.affiliates') }}</a>
+            <a href="#">{{ t('footer.features.portal') }}</a>
+            <a href="#">{{ t('footer.features.jobs') }}</a>
+            <a href="#">{{ t('footer.features.sponsors') }}</a>
           </div>
           
           <div class="link-column">
-            <h3>Company</h3>
-            <a href="#">About</a>
-            <router-link to="/pricing">Pricing</router-link>
-            <a href="#">Careers</a>
-            <router-link to="/blog">Blog</router-link>
+            <h3>{{ t('footer.company.title') }}</h3>
+            <a href="#">{{ t('footer.company.about') }}</a>
+            <router-link :to="`/${locale}/pricing`">{{ t('footer.company.pricing') }}</router-link>
+            <a href="#">{{ t('footer.company.careers') }}</a>
+            <router-link :to="`/${locale}/blog`">{{ t('footer.company.blog') }}</router-link>
           </div>
 
           <div class="link-column newsletter-column">
-            <h3>Subscribe to our newsletter</h3>
+            <h3>{{ t('footer.newsletter.title') }}</h3>
             <form @submit.prevent="handleSubscribe" class="newsletter-form">
               <input 
                 type="email" 
                 v-model="email" 
-                placeholder="Enter your email" 
+                :placeholder="t('footer.newsletter.placeholder')" 
                 required 
               />
-              <button type="submit" class="btn-subscribe">Subscribe</button>
+              <button type="submit" class="btn-subscribe">{{ t('footer.newsletter.button') }}</button>
             </form>
           </div>
         </div>
@@ -65,7 +67,7 @@ const handleSubscribe = () => {
 
       <div class="footer-bottom">
         <div class="copyright">
-          Built with Vue 3 • © {{ new Date().getFullYear() }}
+          {{ t('footer.copyright') }} • © {{ new Date().getFullYear() }}
         </div>
         
         <div class="social-links">

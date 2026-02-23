@@ -1,6 +1,6 @@
 <script setup>
-import { useContentStore } from "../stores/useContent";
-const store = useContentStore();
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 </script>
 
 <template>
@@ -8,13 +8,13 @@ const store = useContentStore();
     <div class="hero-glow"></div>
     <div class="container hero-content">
       <h1 class="hero-title">
-        {{ store.hero.title }} <br />
-        <span class="highlight">{{ store.hero.highlight }}</span>
+        {{ t('hero.title') }} <br />
+        <span class="highlight">{{ t('hero.highlight') }}</span>
       </h1>
-      <p class="hero-description">{{ store.hero.description }}</p>
+      <p class="hero-description">{{ t('hero.description') }}</p>
       <div class="hero-actions">
-        <button class="btn btn-primary">{{ store.hero.cta }}</button>
-        <button class="btn btn-secondary">{{ store.hero.secondaryCta }}</button>
+        <button class="btn btn-primary">{{ t('hero.cta') }}</button>
+        <button class="btn btn-secondary">{{ t('hero.secondaryCta') }}</button>
       </div>
     </div>
   </section>

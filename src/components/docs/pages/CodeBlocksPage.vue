@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 const emit = defineEmits(['set-ref', 'navigate'])
+const { t } = useI18n()
 
 const activeGroupTab = ref('pnpm')
 const isCollapsed = ref(true)
@@ -9,16 +12,16 @@ const isCollapsed = ref(true)
 <template>
   <div class="docs-page-content">
     <header class="page-head">
-      <h1>Code Blocks</h1>
-      <p class="subtitle">Display inline code and code blocks</p>
+      <h1>{{ t('docs.pages.codeblocks') }}</h1>
+      <p class="subtitle">{{ t('docs.searchDesc.codeblocks') }}</p>
     </header>
 
     <div class="divider"></div>
 
-    <h2 id="basic" :ref="(el) => emit('set-ref', el)">Basic</h2>
+    <h2 id="basic" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.basicTitle') }}</h2>
 
-    <h3 id="inline-code" :ref="(el) => emit('set-ref', el)">Inline Code</h3>
-    <p>Use inline code to display code snippets within text paragraphs. It's ideal for referencing code elements directly in sentences.</p>
+    <h3 id="inline-code" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.inlineCodeTitle') }}</h3>
+    <p>{{ t('docs.codeblocks.inlineCodeDesc') }}</p>
     
     <div class="preview-box">
       <div class="preview-display">
@@ -29,8 +32,8 @@ const isCollapsed = ref(true)
       </div>
     </div>
 
-    <h3 id="code-blocks" :ref="(el) => emit('set-ref', el)">Code Blocks</h3>
-    <p>Use code blocks to display multi-line code snippets with syntax highlighting. Code blocks are essential for presenting code examples clearly.</p>
+    <h3 id="code-blocks" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.codeBlocksTitle') }}</h3>
+    <p>{{ t('docs.codeblocks.codeBlocksDesc') }}</p>
 
     <div class="docs-code-block">
       <pre><code>export default defineNuxtConfig({
@@ -38,7 +41,7 @@ const isCollapsed = ref(true)
 })</code></pre>
     </div>
 
-    <p>When writing a code-block, you can specify a filename that will be displayed on top of the code block. An icon will be automatically displayed based on the extension or the name.</p>
+    <p>{{ t('docs.codeblocks.filenameDesc') }}</p>
 
     <div class="docs-code-block">
       <div class="docs-code-header">
@@ -50,10 +53,10 @@ const isCollapsed = ref(true)
 })</code></pre>
     </div>
 
-    <p>Every code-block has a built-in copy button that will copy the code to your clipboard.</p>
+    <p>{{ t('docs.codeblocks.copyBtnDesc') }}</p>
 
-    <h3 id="highlight-line" :ref="(el) => emit('set-ref', el)">Highlight Line</h3>
-    <p>To highlight lines of code, add <code class="inline-code">{}</code> around the line numbers you want to highlight.</p>
+    <h3 id="highlight-line" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.highlightLineTitle') }}</h3>
+    <p v-html="t('docs.codeblocks.highlightLineDesc')"></p>
 
     <div class="docs-code-block">
       <div class="docs-code-header">
@@ -71,10 +74,10 @@ const isCollapsed = ref(true)
 
     <div class="divider"></div>
 
-    <h2 id="advanced" :ref="(el) => emit('set-ref', el)">Advanced</h2>
+    <h2 id="advanced" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.advancedTitle') }}</h2>
 
-    <h3 id="codegroup" :ref="(el) => emit('set-ref', el)">CodeGroup</h3>
-    <p>Group code blocks in tabs using <code class="inline-code">code-group</code>. Perfect for showing multiple package managers.</p>
+    <h3 id="codegroup" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.codeGroupTitle') }}</h3>
+    <p v-html="t('docs.codeblocks.codeGroupDesc')"></p>
 
     <div class="docs-code-block">
       <div class="code-tabs">
@@ -89,8 +92,8 @@ const isCollapsed = ref(true)
       <pre v-if="activeGroupTab === 'bun'"><code>bun add @nuxt/ui</code></pre>
     </div>
 
-    <h3 id="codetree" :ref="(el) => emit('set-ref', el)">CodeTree</h3>
-    <p>Display code blocks in a file tree view using <code class="inline-code">code-tree</code>.</p>
+    <h3 id="codetree" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.codeTreeTitle') }}</h3>
+    <p v-html="t('docs.codeblocks.codeTreeDesc')"></p>
 
     <div class="file-tree-container">
       <div class="file-tree">
@@ -109,7 +112,7 @@ const isCollapsed = ref(true)
       </div>
     </div>
 
-    <h3 id="codepreview" :ref="(el) => emit('set-ref', el)">CodePreview</h3>
+    <h3 id="codepreview" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.codePreviewTitle') }}</h3>
     <div class="preview-box">
       <div class="preview-display">
         <code class="inline-code">inline code</code>
@@ -119,7 +122,7 @@ const isCollapsed = ref(true)
       </div>
     </div>
 
-    <h3 id="codecollapse" :ref="(el) => emit('set-ref', el)">CodeCollapse</h3>
+    <h3 id="codecollapse" :ref="(el) => emit('set-ref', el)">{{ t('docs.codeblocks.codeCollapseTitle') }}</h3>
     <div class="docs-code-block" :class="{ 'is-collapsed': isCollapsed }">
       <div class="docs-code-header">
         <span class="docs-code-title">main.css</span>
@@ -136,22 +139,22 @@ const isCollapsed = ref(true)
 }</code></pre>
       <div class="collapse-overlay" v-if="isCollapsed"></div>
       <button class="collapse-btn" @click="isCollapsed = !isCollapsed">
-        {{ isCollapsed ? 'Expand code' : 'Collapse code' }}
+        {{ isCollapsed ? t('docs.codeblocks.expandCode') : t('docs.codeblocks.collapseCode') }}
       </button>
     </div>
 
     <div class="docs-nav-cards">
       <a href="#" class="docs-nav-card prev" @click.prevent="emit('navigate', 'markdown')">
         <div class="docs-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
-        <span class="docs-nav-label">Previous</span>
-        <h3>Markdown Syntax</h3>
-        <p>Text, title, and styling in standard markdown.</p>
+        <span class="docs-nav-label">{{ t('docs.nav.previous') }}</span>
+        <h3>{{ t('docs.pages.markdown') }}</h3>
+        <p>{{ t('docs.searchDesc.markdown') }}</p>
       </a>
       <a href="#" class="docs-nav-card next" @click.prevent="emit('navigate', 'prose')">
         <div class="docs-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-        <span class="docs-nav-label">Next</span>
-        <h3>Prose Components</h3>
-        <p>Components to help you structure content.</p>
+        <span class="docs-nav-label">{{ t('docs.nav.next') }}</span>
+        <h3>{{ t('docs.pages.prose') }}</h3>
+        <p>{{ t('docs.searchDesc.prose') }}</p>
       </a>
     </div>
   </div>
@@ -176,13 +179,14 @@ const isCollapsed = ref(true)
   background: var(--code-bg);
   font-size: 0.875rem;
   color: var(--primary);
+  text-align: start;
 }
 .highlighted-line {
   display: block;
   background: rgba(66, 184, 131, 0.15);
-  border-left: 3px solid var(--primary);
-  margin-left: -1rem;
-  padding-left: 1rem;
+  border-inline-start: 3px solid var(--primary);
+  margin-inline-start: -1rem;
+  padding-inline-start: 1rem;
 }
 .code-tabs {
   display: flex;
@@ -214,9 +218,10 @@ const isCollapsed = ref(true)
 .file-tree {
   width: 200px;
   background: var(--code-header);
-  border-right: 1px solid var(--border);
+  border-inline-end: 1px solid var(--border);
   padding: 1rem;
   font-size: 0.85rem;
+  text-align: start;
 }
 .tree-item {
   padding: 0.25rem 0.5rem;
@@ -232,6 +237,7 @@ const isCollapsed = ref(true)
   background: var(--code-bg);
   padding: 1rem;
   overflow: auto;
+  text-align: start;
 }
 .is-collapsed {
   max-height: 200px;
@@ -240,8 +246,7 @@ const isCollapsed = ref(true)
 .collapse-overlay {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  inset-inline: 0;
   height: 80px;
   background: linear-gradient(transparent, var(--code-bg));
 }
@@ -258,5 +263,8 @@ const isCollapsed = ref(true)
   color: var(--text);
   cursor: pointer;
   z-index: 5;
+}
+[dir="rtl"] .collapse-btn {
+  transform: translateX(50%);
 }
 </style>

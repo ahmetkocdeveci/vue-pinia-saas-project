@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const emit = defineEmits(['set-ref', 'navigate'])
 
 const activeAcc = ref(0) 
@@ -10,18 +12,17 @@ const toggleAccordion = (index) => {
   activeAcc.value = activeAcc.value === index ? null : index
 }
 </script>
-
 <template>
   <div class="docs-page-content">
     <header class="page-head">
-      <h1>Prose Components</h1>
-      <p class="subtitle">Components to help you structure your content.</p>
+      <h1>{{ t('docs.pages.prose') }}</h1>
+      <p class="subtitle">{{ t('docs.prose.subtitle') }}</p>
     </header>
 
     <div class="divider"></div>
 
     <h2 id="accordion" :ref="(el) => emit('set-ref', el)">Accordion</h2>
-    <p>Use <code class="inline-code">accordion</code> and <code class="inline-code">accordion-item</code> to create collapsible content sections. Accordions are useful for organizing FAQs, expandable details, or grouped information in an interactive way.</p>
+    <p v-html="t('docs.prose.accordionDesc')"></p>
     
     <div class="ui-demo-box">
       <div class="ui-demo-preview no-padding">
@@ -30,24 +31,24 @@ const toggleAccordion = (index) => {
             <button class="ui-acc-trigger" @click="toggleAccordion(0)">
               <div class="ui-acc-title">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>What are the main considerations when upgrading to Nuxt UI v3?</span>
+                <span>{{ t('docs.prose.accQ1') }}</span>
               </div>
               <svg class="ui-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ui-acc-panel" v-show="activeAcc === 0">
-              <p>The transition to v3 involves significant changes, including new component structures, updated theming approaches, and revised TypeScript definitions. We recommend a careful, incremental upgrade process, starting with thorough testing in a development environment.</p>
+              <p>{{ t('docs.prose.accA1') }}</p>
             </div>
           </div>
           <div class="ui-acc-item" :class="{ 'is-active': activeAcc === 1 }">
             <button class="ui-acc-trigger" @click="toggleAccordion(1)">
               <div class="ui-acc-title">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span>Is Nuxt UI v3 compatible with standalone Vue projects?</span>
+                <span>{{ t('docs.prose.accQ2') }}</span>
               </div>
               <svg class="ui-acc-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="ui-acc-panel" v-show="activeAcc === 1">
-              <p>Nuxt UI is now compatible with Vue! You can follow the <a href="#" class="primary-link" @click.prevent="emit('navigate', 'installation')">installation guide</a> to get started.</p>
+              <p v-html="t('docs.prose.accA2')"></p>
             </div>
           </div>
         </div>
@@ -72,7 +73,7 @@ started/installation) to get started.
     </div>
 
     <h2 id="badge" :ref="(el) => emit('set-ref', el)">Badge</h2>
-    <p>Use badge to display status indicators or labels. Badges are great for highlighting version numbers, statuses, or categories within your content.</p>
+    <p>{{ t('docs.prose.badgeDesc') }}</p>
     
     <div class="ui-demo-box">
       <div class="ui-demo-preview flex-center p-3xl">
@@ -86,13 +87,13 @@ started/installation) to get started.
     </div>
 
     <h2 id="callout" :ref="(el) => emit('set-ref', el)">Callout</h2>
-    <p>Use callout to emphasize important contextual information. Callouts draw attention to notes, tips, warnings, or cautions, making key information stand out.</p>
-    <p>Customize with <code class="inline-code">icon</code> and <code class="inline-code">color</code> props or use <code class="inline-code">note</code>, <code class="inline-code">tip</code>, <code class="inline-code">warning</code>, <code class="inline-code">caution</code> shortcuts for pre-defined semantic styles.</p>
+    <p>{{ t('docs.prose.calloutDesc1') }}</p>
+    <p v-html="t('docs.prose.calloutDesc2')"></p>
     
     <div class="ui-demo-box">
       <div class="ui-demo-preview p-2xl">
         <div class="ui-callout base">
-          <span>This is a <code class="inline-code">callout</code> with full <strong>markdown</strong> support.</span>
+          <span v-html="t('docs.prose.calloutBase')"></span>
         </div>
       </div>
       <div class="ui-demo-code">
@@ -106,19 +107,19 @@ This is a `callout` with full **markdown** support.
       <div class="ui-demo-preview flex-col p-2xl">
         <div class="ui-callout note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          <span>Here's some additional information for you.</span>
+          <span>{{ t('docs.prose.calloutNote') }}</span>
         </div>
         <div class="ui-callout tip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v1m8 8h-1M4.222 4.222l.707.707m14.142 0l-.707.707M12 11a3 3 0 0 0-3 3v2h6v-2a3 3 0 0 0-3-3z"/></svg>
-          <span>Here's a helpful suggestion.</span>
+          <span>{{ t('docs.prose.calloutTip') }}</span>
         </div>
         <div class="ui-callout warning">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span>Be careful with this action as it might have unexpected results.</span>
+          <span>{{ t('docs.prose.calloutWarn') }}</span>
         </div>
         <div class="ui-callout caution">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
-          <span>This action cannot be undone.</span>
+          <span>{{ t('docs.prose.calloutCaut') }}</span>
         </div>
       </div>
       <div class="ui-demo-code">
@@ -141,8 +142,8 @@ This action cannot be undone.
     </div>
 
     <h2 id="card" :ref="(el) => emit('set-ref', el)">Card</h2>
-    <p>Use <code class="inline-code">card</code> to highlight content blocks. Cards are useful for showcasing features, resources, or related information in visually distinct and interactive containers.</p>
-    <p>Customize with <code class="inline-code">title</code>, <code class="inline-code">icon</code>, and <code class="inline-code">color</code> props. Cards can also act as links using <code class="inline-code">&lt;NuxtLink&gt;</code> properties for navigation.</p>
+    <p v-html="t('docs.prose.cardDesc1')"></p>
+    <p v-html="t('docs.prose.cardDesc2')"></p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview flex-center p-3xl">
@@ -154,7 +155,7 @@ This action cannot be undone.
             <svg class="card-icon-main" viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             <span class="card-title-text">Dashboard</span>
           </div>
-          <p class="card-description">A dashboard with multi-column layout.</p>
+          <p class="card-description">{{ t('docs.prose.cardDash') }}</p>
         </div>
       </div>
       <div class="ui-demo-code">
@@ -171,7 +172,7 @@ A dashboard with multi-column layout.
     </div>
 
     <h2 id="card-group" :ref="(el) => emit('set-ref', el)">CardGroup</h2>
-    <p>Use <code class="inline-code">card-group</code> to arrange cards in a grid layout. <code class="inline-code">card-group</code> is ideal for displaying collections of cards in a structured, visually appealing, and responsive grid.</p>
+    <p v-html="t('docs.prose.cardGroupDesc')"></p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview p-2xl">
@@ -182,7 +183,7 @@ A dashboard with multi-column layout.
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               <h3>Dashboard</h3>
             </div>
-            <p>A dashboard with multi-column layout.</p>
+            <p>{{ t('docs.prose.cardDash') }}</p>
           </div>
           
           <div class="ui-card">
@@ -191,7 +192,7 @@ A dashboard with multi-column layout.
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               <h3>SaaS</h3>
             </div>
-            <p>A template with landing, pricing, docs and blog.</p>
+            <p>{{ t('docs.prose.cardSaas') }}</p>
           </div>
 
           <div class="ui-card">
@@ -200,7 +201,7 @@ A dashboard with multi-column layout.
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               <h3>Docs</h3>
             </div>
-            <p>A documentation with <code class="inline-code">@nuxt/content</code>.</p>
+            <p v-html="t('docs.prose.cardDocs')"></p>
           </div>
 
           <div class="ui-card">
@@ -209,7 +210,7 @@ A dashboard with multi-column layout.
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
               <h3>Landing</h3>
             </div>
-            <p>A landing page you can use as starting point.</p>
+            <p>{{ t('docs.prose.cardLanding') }}</p>
           </div>
         </div>
       </div>
@@ -262,14 +263,14 @@ A landing page you can use as starting point.
     </div>
 
     <h2 id="collapsible" :ref="(el) => emit('set-ref', el)">Collapsible</h2>
-    <p>Use <code class="inline-code">collapsible</code> to hide and reveal content sections. <code class="inline-code">collapsible</code> is ideal for showing optional details, technical specifications, or less frequently needed information.</p>
+    <p v-html="t('docs.prose.colDesc')"></p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview p-2xl">
         <div class="ui-collapsible-container">
           <button class="ui-collapsible-trigger" @click="isColOpen = !isColOpen">
             <svg class="col-chevron" :class="{ 'open': isColOpen }" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><polyline points="6 9 12 15 18 9"/></svg>
-            <span>Show properties</span>
+            <span>{{ t('docs.prose.colShow') }}</span>
           </button>
           <div v-show="isColOpen" class="ui-collapsible-panel">
             <table class="ui-props-table">
@@ -315,7 +316,7 @@ A landing page you can use as starting point.
     </div>
 
     <h2 id="field" :ref="(el) => emit('set-ref', el)">Field</h2>
-    <p>Use <code class="inline-code">field</code> to describe a specific field, property, or parameter. <code class="inline-code">field</code> components are perfect for documenting API parameters, component props, or configuration options.</p>
+    <p v-html="t('docs.prose.fieldDesc')"></p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview p-2xl">
@@ -323,9 +324,9 @@ A landing page you can use as starting point.
           <div class="ui-field-header">
             <span class="field-name">name</span>
             <span class="field-type">string</span>
-            <span class="field-required">required</span>
+            <span class="field-required">{{ t('docs.prose.fieldReq') }}</span>
           </div>
-          <p class="field-description">The <code class="inline-code">description</code> can be set as prop or in the default slot with full <strong>markdown</strong> support.</p>
+          <p class="field-description" v-html="t('docs.prose.fieldDemo')"></p>
         </div>
       </div>
       <div class="ui-demo-code">
@@ -336,7 +337,7 @@ The `description` can be set as prop or in the default slot with full **markdown
     </div>
 
     <h2 id="field-group" :ref="(el) => emit('set-ref', el)">FieldGroup</h2>
-    <p>Use <code class="inline-code">field-group</code> to group related fields together in a list. <code class="inline-code">field-group</code> helps organize and structure documentation for multiple related fields or properties.</p>
+    <p v-html="t('docs.prose.fieldGroupDesc')"></p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview no-padding">
@@ -345,28 +346,28 @@ The `description` can be set as prop or in the default slot with full **markdown
             <span class="field-name">analytics</span>
             <span class="field-type">boolean</span>
           </div>
-          <p class="field-description">Default to <code class="inline-code">false</code> - Enables analytics for your project (coming soon).</p>
+          <p class="field-description" v-html="t('docs.prose.fgAnalyt')"></p>
         </div>
         <div class="ui-field-block border-bottom">
           <div class="ui-field-header">
             <span class="field-name">blob</span>
             <span class="field-type">boolean</span>
           </div>
-          <p class="field-description">Default to <code class="inline-code">false</code> - Enables blob storage to store static assets, such as images, videos and more.</p>
+          <p class="field-description" v-html="t('docs.prose.fgBlob')"></p>
         </div>
         <div class="ui-field-block border-bottom">
           <div class="ui-field-header">
             <span class="field-name">cache</span>
             <span class="field-type">boolean</span>
           </div>
-          <p class="field-description">Default to <code class="inline-code">false</code> - Enables cache storage to cache your server route responses or functions using Nitro's <code class="inline-code">cachedEventHandler</code> and <code class="inline-code">cachedFunction</code></p>
+          <p class="field-description" v-html="t('docs.prose.fgCache')"></p>
         </div>
         <div class="ui-field-block">
           <div class="ui-field-header">
             <span class="field-name">database</span>
             <span class="field-type">boolean</span>
           </div>
-          <p class="field-description">Default to <code class="inline-code">false</code> - Enables SQL database to store your application's data.</p>
+          <p class="field-description" v-html="t('docs.prose.fgDb')"></p>
         </div>
       </div>
       <div class="ui-demo-code">
@@ -391,7 +392,7 @@ Default to `false` - Enables SQL database to store your application's data.
     </div>
 
     <h2 id="icon" :ref="(el) => emit('set-ref', el)">Icon</h2>
-    <p>Use <code class="inline-code">icon</code> to insert icons from icon libraries. Icons provide visual cues and enhance the user interface of your documentation.</p>
+    <p v-html="t('docs.prose.iconDesc')"></p>
     
     <div class="ui-demo-box">
       <div class="ui-demo-preview flex-center" style="padding: 3rem;">
@@ -403,7 +404,7 @@ Default to `false` - Enables SQL database to store your application's data.
     </div>
 
     <h2 id="kbd" :ref="(el) => emit('set-ref', el)">Kbd</h2>
-    <p>Use <code class="inline-code">kbd</code> to display keyboard keys or shortcuts. <code class="inline-code">kbd</code> components clearly indicate keyboard inputs for instructions or command references.</p>
+    <p v-html="t('docs.prose.kbdDesc')"></p>
     
     <div class="ui-demo-box">
       <div class="ui-demo-preview flex-center gap-sm" style="padding: 3rem;">
@@ -416,7 +417,7 @@ Default to `false` - Enables SQL database to store your application's data.
     </div>
 
     <h2 id="tabs" :ref="(el) => emit('set-ref', el)">Tabs</h2>
-    <p>Use <code class="inline-code">tabs</code> and <code class="inline-code">tabs-item</code> to organize content into tabbed interfaces. Tabs are effective for separating content into logical sections, improving content discoverability and organization.</p>
+    <p v-html="t('docs.prose.tabsDesc')"></p>
     
     <div class="ui-demo-box">
       <div class="ui-tabs-nav">
@@ -460,47 +461,47 @@ Lorem velit voluptate ex reprehenderit ullamco et culpa.
 <span class="hl-tag">:::</span>
 
 <span class="hl-tag">::</span></code></pre>
-</div>
-</div>
+      </div>
+    </div>
 
-<h2 id="steps" :ref="(el) => emit('set-ref', el)">Steps</h2>
-<p>Use <code class="inline-code">steps</code> to create step-by-step guides from document headings. <code class="inline-code">steps</code> component automatically numbers headings, creating a numbered guide for processes and tutorials.</p>
-<p>Set the <code class="inline-code">level</code> prop to define the heading level to include in the step-by-step guide.</p>
+    <h2 id="steps" :ref="(el) => emit('set-ref', el)">Steps</h2>
+    <p v-html="t('docs.prose.stepsDesc1')"></p>
+    <p v-html="t('docs.prose.stepsDesc2')"></p>
 
-<div class="ui-demo-box">
-  <div class="ui-demo-preview p-2xl">
-    <div class="ui-step-list">
-      <div class="ui-step-item">
-        <div class="ui-step-indicator">1</div>
-        <div class="ui-step-content">
-          <h4>Add the Nuxt UI module in your <code class="inline-code">nuxt.config.ts</code></h4>
-          <div class="ui-step-codeblock">
-            <div class="ui-step-code-header">nuxt.config.ts</div>
-            <pre v-pre><code>export default defineNuxtConfig({
-modules: ['@nuxt/ui']
+    <div class="ui-demo-box">
+      <div class="ui-demo-preview p-2xl">
+        <div class="ui-step-list">
+          <div class="ui-step-item">
+            <div class="ui-step-indicator">1</div>
+            <div class="ui-step-content">
+              <h4 v-html="t('docs.prose.step1')"></h4>
+              <div class="ui-step-codeblock">
+                <div class="ui-step-code-header">nuxt.config.ts</div>
+                <pre v-pre><code>export default defineNuxtConfig({
+  modules: ['@nuxt/ui']
 })</code></pre>
-</div>
-</div>
-</div>
-<div class="ui-step-item">
-<div class="ui-step-indicator">2</div>
-<div class="ui-step-content">
-<h4>Import Tailwind CSS and Nuxt UI in your CSS</h4>
-<div class="ui-step-codeblock">
-<div class="ui-step-code-header">assets/css/main.css</div>
-<pre v-pre><code>@import "tailwindcss";
+              </div>
+            </div>
+          </div>
+          <div class="ui-step-item">
+            <div class="ui-step-indicator">2</div>
+            <div class="ui-step-content">
+              <h4>{{ t('docs.prose.step2') }}</h4>
+              <div class="ui-step-codeblock">
+                <div class="ui-step-code-header">assets/css/main.css</div>
+                <pre v-pre><code>@import "tailwindcss";
 @import "@nuxt/ui";</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="ui-demo-code">
-<pre v-pre><code><span class="hl-tag">::steps</span>{level="4"}<span class="hl-tag">::</span></code></pre>
-</div>
-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui-demo-code">
+        <pre v-pre><code><span class="hl-tag">::steps</span>{level="4"}<span class="hl-tag">::</span></code></pre>
+      </div>
+    </div>
 
-</div>
+  </div>
 </template>
 <style scoped>
 .ui-demo-box {
@@ -557,13 +558,13 @@ modules: ['@nuxt/ui']
 
 .ui-accordion .ui-acc-item { border-bottom: 1px solid var(--border); }
 .ui-accordion .ui-acc-item:last-child { border-bottom: none; }
-.ui-acc-trigger { width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: var(--heading); cursor: pointer; text-align: left; transition: background 0.2s; }
+.ui-acc-trigger { width: 100%; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; background: transparent; border: none; color: var(--heading); cursor: pointer; text-align: start; transition: background 0.2s; }
 .ui-acc-trigger:hover { background: rgba(125,125,125,0.05); }
 .ui-acc-title { display: flex; align-items: center; gap: 0.85rem; font-size: 0.95rem; font-weight: 500; }
 .ui-acc-title svg { width: 18px; height: 18px; color: var(--primary); flex-shrink: 0; }
 .ui-acc-chevron { width: 18px; height: 18px; transition: transform 0.2s; color: var(--text); opacity: 0.6; }
 .ui-acc-item.is-active .ui-acc-chevron { transform: rotate(180deg); }
-.ui-acc-panel { padding: 0 1.5rem 1.25rem 3.25rem; font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+.ui-acc-panel { padding-block: 0 1.25rem; padding-inline-start: 3.25rem; padding-inline-end: 1.5rem; font-size: 0.95rem; color: var(--text); line-height: 1.6; }
 .ui-acc-panel p { margin: 0; }
 .primary-link { color: var(--primary); text-decoration: none; }
 .primary-link:hover { text-decoration: underline; }
@@ -594,8 +595,8 @@ modules: ['@nuxt/ui']
 .col-chevron { transition: transform 0.2s; }
 .col-chevron.open { transform: rotate(180deg); }
 .ui-collapsible-panel { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--card-bg); }
-.ui-props-table { width: 100%; border-collapse: collapse; text-align: left; }
-.ui-props-table th, .ui-props-table td { padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+.ui-props-table { width: 100%; border-collapse: collapse; text-align: start; }
+.ui-props-table th, .ui-props-table td { padding: 0.85rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; text-align: start; }
 .ui-props-table tbody tr:last-child td { border-bottom: none; }
 .ui-props-table th { background: var(--code-header, rgba(125,125,125,0.05)); color: var(--heading); font-weight: 600; }
 .ui-props-table td { color: var(--text); }
@@ -630,7 +631,7 @@ modules: ['@nuxt/ui']
 .ui-step-list { display: flex; flex-direction: column; }
 .ui-step-item { display: flex; gap: 1.5rem; position: relative; padding-bottom: 2.5rem; }
 .ui-step-item:last-child { padding-bottom: 0; }
-.ui-step-item::after { content: ''; position: absolute; left: 15px; top: 36px; bottom: 0; width: 1px; background: var(--border); }
+.ui-step-item::after { content: ''; position: absolute; inset-inline-start: 15px; top: 36px; bottom: 0; width: 1px; background: var(--border); }
 .ui-step-item:last-child::after { display: none; }
 .ui-step-indicator { width: 32px; height: 32px; border-radius: 50%; background: rgba(66, 184, 131, 0.1); border: 1px dashed var(--primary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; flex-shrink: 0; z-index: 1; }
 .ui-step-content { width: 100%; }

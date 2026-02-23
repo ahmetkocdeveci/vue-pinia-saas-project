@@ -1,39 +1,45 @@
 <script setup>
 import AppPricing from '../components/AppPricing.vue'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const faqs = ref([
-  { question: 'Is your service secure?', answer: 'All your data is end-to-end encrypted and protected by top-tier security protocols.', open: false },
-  { question: 'How can I cancel my subscription?', answer: 'You can easily cancel your subscription anytime from your profile settings.', open: false },
-  { question: 'Is there a free trial?', answer: 'Yes, you can try our Professional plan for 14 days completely free.', open: false },
-  { question: 'Can I change my plan later?', answer: 'Absolutely, you can upgrade or downgrade your plan at any time based on your needs.', open: false }
-])
+const { t, tm } = useI18n()
+const openStates = ref([])
+
+const toggleFaq = (index) => {
+  openStates.value[index] = !openStates.value[index]
+}
 </script>
 
 <template>
   <div class="pricing-page">
     <div class="container">
       <header class="page-header">
-        <h1>Choose the Right Plan for You</h1>
-        <p>Simple, transparent, and no surprise pricing.</p>
+        <h1>{{ t('pricingPage.header.title') }}</h1>
+        <p>{{ t('pricingPage.header.subtitle') }}</p>
       </header>
 
       <AppPricing />
 
       <section class="faq-section">
         <div class="section-header">
-          <h2>Frequently Asked Questions</h2>
-          <p>Find answers to your questions here.</p>
+          <h2>{{ t('pricingPage.faq.title') }}</h2>
+          <p>{{ t('pricingPage.faq.subtitle') }}</p>
         </div>
         
         <div class="faq-list">
-          <div v-for="(faq, index) in faqs" :key="index" class="faq-item glass" @click="faq.open = !faq.open">
+          <div 
+            v-for="(faq, index) in tm('pricingPage.faqs')" 
+            :key="index" 
+            class="faq-item glass" 
+            @click="toggleFaq(index)"
+          >
             <div class="faq-question">
               <span>{{ faq.question }}</span>
-              <span class="chevron" :class="{ 'rotate': faq.open }">▼</span>
+              <span class="chevron" :class="{ 'rotate': openStates[index] }">▼</span>
             </div>
             <transition name="faq-slide">
-              <div v-show="faq.open" class="faq-answer">
+              <div v-show="openStates[index]" class="faq-answer">
                 {{ faq.answer }}
               </div>
             </transition>
@@ -53,7 +59,7 @@ const faqs = ref([
 .section-header { text-align: center; margin-bottom: 4rem; }
 .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
-.faq-item { padding: 1.5rem; border-radius: 16px; cursor: pointer; border: 1px solid var(--border-color); transition: border-color 0.3s ease; }
+.faq-item { padding: 1.5rem; border-radius: 16px; cursor: pointer; border: 1px solid var(--border-color); transition: border-color 0.3s ease; text-align: start; }
 .faq-item:hover { border-color: var(--primary); }
 .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 1.1rem; }
 .chevron { font-size: 0.8rem; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); color: var(--text-muted); }

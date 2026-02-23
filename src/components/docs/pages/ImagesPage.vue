@@ -1,25 +1,28 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
 const emit = defineEmits(['set-ref', 'navigate'])
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="docs-page-content">
     <header class="page-head">
-      <h1>Images and Embeds</h1>
-      <p class="subtitle">Add image, video, and other HTML elements.</p>
+      <h1>{{ t('docs.pages.images') }}</h1>
+      <p class="subtitle">{{ t('docs.images.subtitle') }}</p>
     </header>
 
     <div class="divider"></div>
 
-    <h2 id="image" :ref="(el) => emit('set-ref', el)">Image</h2>
+    <h2 id="image" :ref="(el) => emit('set-ref', el)">{{ t('docs.images.imageTitle') }}</h2>
     
-    <h3 id="using-markdown" :ref="(el) => emit('set-ref', el)">Using Markdown</h3>
-    <p>Display images using standard Markdown syntax. Markdown images are simple to implement for basic image display.</p>
+    <h3 id="using-markdown" :ref="(el) => emit('set-ref', el)">{{ t('docs.images.usingMarkdownTitle') }}</h3>
+    <p>{{ t('docs.images.usingMarkdownDesc') }}</p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview">
         <div class="image-wrapper">
-          <img src="https://nuxt.com/new-social.jpg" alt="Nuxt Social Image" class="demo-image" />
+          <img src="https://nuxt.com/new-social.jpg" :alt="t('docs.images.imgAlt')" class="demo-image" />
         </div>
       </div>
       <div class="ui-demo-code">
@@ -27,31 +30,29 @@ const emit = defineEmits(['set-ref', 'navigate'])
       </div>
     </div>
     
-    <div class="ui-info-callout">
-      If <code class="inline-code">@nuxt/image</code> is installed, the <code class="inline-code">&lt;NuxtImg&gt;</code> component will be used instead of the native <code class="inline-code">img</code> tag.
-    </div>
+    <div class="ui-info-callout" v-html="t('docs.images.imageCallout')"></div>
 
-    <h3 id="using-embeds" :ref="(el) => emit('set-ref', el)">Using Embeds</h3>
-    <p>Use embeds for more image customization. Embeds offer greater control over image attributes like size and styling.</p>
+    <h3 id="using-embeds" :ref="(el) => emit('set-ref', el)">{{ t('docs.images.usingEmbedsTitle') }}</h3>
+    <p>{{ t('docs.images.usingEmbedsDesc') }}</p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview flex-center">
-        <img src="https://nuxt.com/new-social.jpg" alt="Nuxt Social Image" height="150" class="demo-image-small" />
+        <img src="https://nuxt.com/new-social.jpg" :alt="t('docs.images.imgAlt')" height="150" class="demo-image-small" />
       </div>
       <div class="ui-demo-code">
         <pre v-pre><code>:img{src="https://nuxt.com/new-social.jpg" alt="Nuxt Social Image" height="150"}</code></pre>
       </div>
     </div>
 
-    <h2 id="embeds-and-html" :ref="(el) => emit('set-ref', el)">Embeds and HTML elements</h2>
-    <p>Embeds allow adding various HTML elements like videos and iframes. This feature extends documentation capabilities to include interactive and multimedia content.</p>
+    <h2 id="embeds-and-html" :ref="(el) => emit('set-ref', el)">{{ t('docs.images.embedsHtmlTitle') }}</h2>
+    <p>{{ t('docs.images.embedsHtmlDesc') }}</p>
 
     <div class="ui-demo-box">
       <div class="ui-demo-preview no-padding">
         <div class="iframe-container">
           <iframe 
             src="https://www.youtube-nocookie.com/embed/_eQxomah-nA?si=pDSzchUBDKb2NQu7" 
-            title="YouTube video player" 
+            :title="t('docs.images.iframeTitle')" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" 
@@ -68,11 +69,11 @@ const emit = defineEmits(['set-ref', 'navigate'])
     <div class="docs-nav-cards">
       <a href="#" class="docs-nav-card prev" @click.prevent="emit('navigate', 'prose')">
         <div class="docs-nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></div>
-        <span class="docs-nav-label">Previous</span>
-        <h3>Prose Components</h3>
-        <p>Components to help you structure your content.</p>
+        <span class="docs-nav-label">{{ t('docs.nav.previous') }}</span>
+        <h3>{{ t('docs.pages.prose') }}</h3>
+        <p>{{ t('docs.prose.subtitle') }}</p>
       </a>
-      </div>
+    </div>
   </div>
 </template>
 
@@ -129,5 +130,5 @@ const emit = defineEmits(['set-ref', 'navigate'])
 }
 
 .iframe-container { position: relative; width: 100%; padding-top: 56.25%; }
-.demo-iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.demo-iframe { position: absolute; top: 0; inset-inline-start: 0; width: 100%; height: 100%; border: none; }
 </style>

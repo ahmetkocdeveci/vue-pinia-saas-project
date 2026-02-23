@@ -1,0 +1,651 @@
+{
+  "nav": {
+    "docs": "Docs",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "changelog": "Changelog",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "logout": "Log Out"
+  },
+  "hero": {
+    "title": "Build your next great idea",
+    "highlight": "faster than ever.",
+    "description": "Everything you need to launch your SaaS in days, not months. A complete solution for modern web applications.",
+    "cta": "Get Started",
+    "secondaryCta": "View Documentation",
+    "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
+  "features": [
+    {
+      "id": 1,
+      "title": "Lightning Fast Performance",
+      "description": "Optimized for speed. Deliver your content to users in milliseconds, improving conversion rates and user experience.",
+      "image": "https://picsum.photos/seed/feat1/800/600",
+      "reverse": false,
+      "items": [
+        { "icon": "⚡", "text": "Global CDN distribution" },
+        { "icon": "🚀", "text": "Optimized asset delivery" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Bank-grade Security",
+      "description": "Your data is safe with us. We employ industry-standard encryption and security protocols to keep your business secure.",
+      "image": "https://picsum.photos/seed/feat2/800/600",
+      "reverse": true,
+      "items": [
+        { "icon": "🔒", "text": "End-to-end encryption" },
+        { "icon": "🛡️", "text": "SOC2 Type II certified" }
+      ]
+    }
+  ],
+  "testimonials": {
+    "title": "Join Thousands Building with SaaSApp",
+    "list": [
+      {
+        "quote": "SaaSApp changed the way we build software. It's incredibly fast and reliable.",
+        "avatar": "https://i.pravatar.cc/150?img=1",
+        "author": "Alice Johnson",
+        "role": "CTO at TechCorp"
+      },
+      {
+        "quote": "The best investment we've made this year. The developer experience is unmatched.",
+        "avatar": "https://i.pravatar.cc/150?img=2",
+        "author": "Mark Smith",
+        "role": "Lead Engineer"
+      },
+      {
+        "quote": "We shipped our MVP in record time thanks to this platform. Highly recommended!",
+        "avatar": "https://i.pravatar.cc/150?img=3",
+        "author": "Sarah Lee",
+        "role": "Startup Founder"
+      }
+    ]
+  },
+  "footer": {
+    "brandDesc": "Build production-ready SaaS applications with our powerful components, authentication flows, and enterprise features.",
+    "resources": {
+      "title": "Resources",
+      "helpCenter": "Help center",
+      "docs": "Docs",
+      "roadmap": "Roadmap",
+      "changelog": "Changelog"
+    },
+    "features": {
+      "title": "Features",
+      "affiliates": "Affiliates",
+      "portal": "Portal",
+      "jobs": "Jobs",
+      "sponsors": "Sponsors"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About",
+      "pricing": "Pricing",
+      "careers": "Careers",
+      "blog": "Blog"
+    },
+    "newsletter": {
+      "title": "Subscribe to our newsletter",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "success": "Successfully subscribed to the newsletter!"
+    },
+    "copyright": "Built with Vue 3"
+  },
+  "pricing": {
+    "toggle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "discount": "20% Off"
+    },
+    "billedAnnually": "Billed annually",
+    "period": "/mo",
+    "mostPopular": "Most Popular",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": 19,
+        "popular": false,
+        "buttonText": "Start Free Trial",
+        "features": [
+          "1 User",
+          "5 Projects",
+          "Community Support",
+          "Basic Analytics"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": 49,
+        "popular": true,
+        "buttonText": "Get Pro",
+        "features": [
+          "Up to 5 Users",
+          "Unlimited Projects",
+          "Priority Support",
+          "Advanced Analytics",
+          "Custom Domain"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": 99,
+        "popular": false,
+        "buttonText": "Contact Sales",
+        "features": [
+          "Unlimited Users",
+          "Unlimited Projects",
+          "24/7 Phone Support",
+          "Custom Integrations",
+          "Dedicated Account Manager"
+        ]
+      }
+    ]
+  },
+  "pricingPage": {
+    "header": {
+      "title": "Choose the Right Plan for You",
+      "subtitle": "Simple, transparent, and no surprise pricing."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to your questions here."
+    },
+    "faqs": [
+      {
+        "question": "Is your service secure?",
+        "answer": "All your data is end-to-end encrypted and protected by top-tier security protocols."
+      },
+      {
+        "question": "How can I cancel my subscription?",
+        "answer": "You can easily cancel your subscription anytime from your profile settings."
+      },
+      {
+        "question": "Is there a free trial?",
+        "answer": "Yes, you can try our Professional plan for 14 days completely free."
+      },
+      {
+        "question": "Can I change my plan later?",
+        "answer": "Absolutely, you can upgrade or downgrade your plan at any time based on your needs."
+      }
+    ]
+  },
+  "changelogPage": {
+    "title": "Changelog",
+    "behindTheScenes": "Behind the scenes:",
+    "releases": [
+      {
+        "date": "Apr 1, 2025",
+        "title": "Clippy Integration (Beta) 🐤",
+        "image": "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=800&auto=format&fit=crop",
+        "description": "🎉 Meet your new productivity assistant! For April Fools' Day, we're introducing Clippy, your friendly (and slightly mischievous) helper. He's here to make your day a little brighter—and maybe a little more chaotic. 😜\n\nClippy pops up with tips, jokes, and the occasional dance across your dashboard. Don't worry, you can always dismiss him with a click (or just enjoy the nostalgia). 🐤",
+        "featuresTitle": "Features:",
+        "features": [
+          "💡 Pops up with helpful (and sometimes unhelpful) tips",
+          "🕺 Animates across your dashboard with classic Clippy moves",
+          "😂 Tells a random joke on demand",
+          "❌ Can be dismissed with a single click",
+          "🥚 Easter eggs for the curious"
+        ],
+        "behindTheScenes": "🎬 Our team had a blast bringing Clippy to life for a day. No productivity assistants were harmed in the making of this feature.\n\nDon't worry, Clippy will only stick around for a day. Or will he? 😉"
+      },
+      {
+        "date": "Nov 12, 2024",
+        "title": "Security Enhancements 🔒",
+        "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
+        "description": "🔒 Your data is safer than ever. This update brings a suite of new security features and compliance improvements, reflecting our ongoing commitment to protecting your business.\n\nWe've worked with security experts and listened to customer feedback to deliver the most requested enhancements. Security is never done, but this release is a big leap forward. 🛡️",
+        "featuresTitle": "Enhancements:",
+        "features": [
+          "🔑 Two-factor authentication (2FA) for all accounts",
+          "🏢 SSO support for enterprise customers",
+          "📜 GDPR and SOC 2 compliance updates",
+          "📝 Improved audit logs and access controls",
+          "⏳ Session timeout and device management",
+          "🔐 Encrypted data at rest and in transit"
+        ],
+        "behindTheScenes": "🕵️‍♂️ We conducted a full security audit and implemented automated vulnerability scanning. Our team is now preparing for additional certifications and regular penetration testing.\n\nThank you for trusting us with your business—security will always be our top priority! 🙏"
+      },
+      {
+        "date": "Oct 25, 2024",
+        "title": "Public API Now Available 🛠️",
+        "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+        "description": "🛠️ Build your own integrations and automate workflows with our brand new public API! This is a huge step for our developer community, and we can't wait to see what you create.\n\nThe API gives you secure, programmatic access to all major resources in your workspace. From automating routine tasks to building custom dashboards, the possibilities are endless. 🤖",
+        "featuresTitle": "Highlights:",
+        "features": [
+          "🌐 RESTful endpoints for all major resources",
+          "🔑 Secure API key authentication",
+          "📚 Comprehensive documentation and code samples",
+          "📡 Webhook support for real-time updates",
+          "🚦 Rate limiting and monitoring for stability",
+          "🗣️ Community forum for sharing projects and getting help"
+        ],
+        "behindTheScenes": "👨‍💻 We worked closely with early adopters to ensure the API is robust and easy to use. Our docs are open source—contributions and feedback are welcome!\n\nWe can't wait to see what you build—share your projects with us and help shape the next version of our API! 🚀"
+      },
+      {
+        "date": "Oct 5, 2024",
+        "title": "Advanced Analytics 📊",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+        "description": "📊 Gain deeper insights into your business with our new analytics dashboard! This release brings powerful tools to help you track, measure, and grow—all in one place.\n\nWe've reimagined analytics from the ground up, making it easier to visualize trends, monitor KPIs, and share reports with your team. Whether you're a data pro or just getting started, you'll find everything you need to make smarter decisions. 🧠",
+        "featuresTitle": "New features:",
+        "features": [
+          "📈 Customizable dashboards and reports",
+          "⏱️ Real-time user and revenue tracking",
+          "📤 Export data to CSV or Google Sheets",
+          "📊 Visualize trends with interactive charts and graphs",
+          "📧 Scheduled email reports for key metrics",
+          "🔍 Drill-down filters for granular analysis"
+        ],
+        "behindTheScenes": "🛠️ We built a new analytics engine using scalable cloud infrastructure, ensuring fast queries and reliable data. Expect more integrations and advanced visualizations soon!\n\nWe're excited to see what insights you discover—let us know what you build with it! 🚀"
+      },
+      {
+        "date": "Sep 15, 2024",
+        "title": "Performance Boost ⚡️",
+        "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+        "description": "⚡ Our SaaS just got a whole lot faster! This update is all about speed, responsiveness, and a smoother experience for everyone. We know how important performance is, so we've made it a top priority for this release.\n\nFrom optimizing our backend infrastructure to fine-tuning the frontend, every part of the app has been reviewed and improved. You'll notice snappier load times, quicker navigation, and a more fluid feel throughout the platform. 🚀",
+        "featuresTitle": "Improvements:",
+        "features": [
+          "🚄 2x faster dashboard load times",
+          "⏱️ Reduced API response latency by 40%",
+          "🖼️ Optimized image delivery and caching for all devices",
+          "🌀 Smoother transitions and navigation between pages",
+          "🧠 Lower memory usage on mobile and desktop"
+        ],
+        "behindTheScenes": "🛠️ We introduced smarter caching, lazy loading, and database indexing. Our team also set up new monitoring tools to catch slowdowns before you do.\n\nLet us know if you notice the difference—and if there's anywhere else you'd like to see us speed things up! 💬"
+      },
+      {
+        "date": "Aug 30, 2024",
+        "title": "Mobile App Beta 📱",
+        "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop",
+        "description": "📱 Take your SaaS dashboard anywhere! Our mobile app beta is now available for iOS and Android, bringing your workspace to your pocket. Stay productive and connected, wherever you are.\n\nWe designed the app from the ground up for speed and usability on small screens. Whether you're checking reports on the train or getting notifications on the go, the mobile app keeps you in the loop. 🚆",
+        "featuresTitle": "Features:",
+        "features": [
+          "📊 Access dashboards and reports on the go",
+          "🔔 Push notifications for important updates",
+          "📴 Offline support for uninterrupted productivity",
+          "🤏 Optimized for touch and small screens",
+          "🛡️ Secure biometric login (Face ID & Touch ID)",
+          "⚡ Quick actions for common tasks"
+        ],
+        "behindTheScenes": "🧑‍💻 We built the app using the latest cross-platform tech, ensuring a native feel on both iOS and Android. Your feedback during beta will help us polish and prioritize new features.\n\nWe'd love your feedback as we prepare for the full launch! 🚀"
+      },
+      {
+        "date": "Jul 20, 2024",
+        "title": "Integrations Galore",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop",
+        "description": "🔌 Connect your SaaS workspace to the tools you love! Our new integrations make it easy to automate and extend your workflow, saving you time and reducing manual work.\n\nThis release is just the beginning—integrations are now a first-class part of our platform. We've started with the most requested tools and will be adding more based on your feedback. 🗂️",
+        "featuresTitle": "New integrations:",
+        "features": [
+          "💬 Slack: Get real-time notifications and updates in your channels",
+          "🐙 GitHub: Link commits and pull requests to your projects for better traceability",
+          "🤖 Zapier: Automate repetitive tasks with 5,000+ apps",
+          "📅 Google Calendar: Sync important dates and deadlines"
+        ],
+        "behindTheScenes": "🔧 We built a new integrations framework to make adding and managing connections seamless. Our API is now more robust, and we're working on an integrations marketplace for even more options.\n\nMore integrations are on the way—tell us which ones you want next! 📨"
+      },
+      {
+        "date": "Jun 15, 2024",
+        "title": "Dark Mode 🌙",
+        "image": "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop",
+        "description": "🌙 Give your eyes a break with our new Dark Mode! After many requests, we're thrilled to deliver a sleek, modern look that's easy on the eyes—day or night.\n\nSwitching themes is now effortless, and every component has been carefully tuned for contrast and accessibility. Whether you're burning the midnight oil or just prefer a darker palette, this update is for you. 🌓",
+        "featuresTitle": "Improvements:",
+        "features": [
+          "🌗 One-click theme toggle in the header",
+          "🖥️ Automatic adaptation to system preferences",
+          "🧩 Fully integrated with Nuxt UI components",
+          "♿ Optimized for accessibility and contrast",
+          "💾 Persistent theme preference across devices",
+          "✨ Subtle animations for a polished feel"
+        ],
+        "behindTheScenes": "🎨 We refactored our color system and tested across dozens of devices to ensure a consistent experience. Expect more theme customization options soon!\n\nLet us know how you like the new look and if you spot any areas for improvement! 💬"
+      },
+      {
+        "date": "May 10, 2024",
+        "title": "Teams & Collaboration",
+        "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop",
+        "description": "🤝 Collaboration just got easier! With Teams, you can now work together more efficiently and securely. This update is all about empowering organizations to scale and manage their members with confidence.\n\nWe listened to your feedback and built a flexible system for inviting colleagues, assigning roles, and tracking activity. Whether you're onboarding new hires or collaborating across departments, Teams has you covered. 👥",
+        "featuresTitle": "What's new:",
+        "features": [
+          "✉️ Invite team members via email or shareable link",
+          "🛡️ Assign roles (Admin, Member, Viewer) for granular access control",
+          "🔔 Real-time activity tracking and notifications",
+          "📊 Team-based dashboards and analytics for better insights",
+          "🔄 Easy switching between multiple teams and organizations"
+        ],
+        "behindTheScenes": "🏗️ We re-architected our user management system to support organizations of any size. This paves the way for future features like SSO, advanced permissions, and audit logs.\n\nPerfect for startups and growing businesses. Try it out and streamline your workflow! 🚀"
+      },
+      {
+        "date": "Apr 1, 2024",
+        "title": "SaaS Launch 🚀",
+        "image": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?q=80&w=800&auto=format&fit=crop",
+        "description": "🚀 We're excited to announce the public launch of our SaaS platform! This milestone is the result of months of design, development, and feedback from our early users. Our goal: make it easier than ever to launch, manage, and grow your business online.\n\nFrom the first line of code, we focused on speed, reliability, and a delightful user experience. Whether you're a solo founder or a growing team, our platform is built to scale with you. 💡",
+        "featuresTitle": "Highlights:",
+        "features": [
+          "⚡ Fast, responsive dashboard UI for effortless navigation",
+          "🔐 Seamless onboarding and secure authentication",
+          "💳 Built-in billing and subscription management with Stripe integration",
+          "🎨 Modern design system powered by Nuxt UI",
+          "📱 Mobile-friendly and accessible from day one",
+          "📚 Helpful documentation and in-app tips"
+        ],
+        "behindTheScenes": "🛠️ We've invested in a robust infrastructure to ensure uptime and performance. Our team has also set up automated testing and continuous deployment, so you'll always have the latest features and fixes.\n\nWe're just getting started—your feedback will help shape the future of our platform. Let us know what you think and what you'd like to see next! ✨"
+      }
+    ]
+  },
+  "docs": {
+    "searchPlaceholder": "Search...",
+    "categories": {
+      "gettingStarted": "Getting Started",
+      "essentials": "Essentials"
+    },
+    "pages": {
+      "introduction": "Introduction",
+      "installation": "Installation",
+      "usage": "Usage",
+      "markdown": "Markdown",
+      "codeblocks": "Codeblocks",
+      "prose": "Prose",
+      "images": "Images"
+    },
+    "toc": {
+      "title": "On this page",
+      "introduction": {
+        "keyFeatures": "Key Features"
+      },
+      "installation": {
+        "quickStart": "Quick Start"
+      },
+      "usage": {
+        "writingContent": "Writing content"
+      },
+      "markdown": {
+        "titles": "Titles",
+        "subtitles": "Subtitles",
+        "textFormatting": "Text Formatting",
+        "links": "Links",
+        "internalLinks": "Internal links",
+        "lists": "Lists",
+        "unordered": "Unordered",
+        "ordered": "Ordered",
+        "nested": "Nested",
+        "tables": "Tables",
+        "blockquotes": "Blockquotes",
+        "singleline": "Singleline",
+        "multiline": "Multiline"
+      },
+      "codeblocks": {
+        "basic": "Basic",
+        "inlineCode": "Inline Code",
+        "codeBlocks": "Code Blocks",
+        "highlightLine": "Highlight Line",
+        "advanced": "Advanced",
+        "codeGroup": "CodeGroup",
+        "codeTree": "CodeTree",
+        "codePreview": "CodePreview",
+        "codeCollapse": "CodeCollapse"
+      },
+      "prose": {
+        "accordion": "Accordion",
+        "badge": "Badge",
+        "callout": "Callout",
+        "card": "Card",
+        "cardGroup": "CardGroup",
+        "collapsible": "Collapsible",
+        "field": "Field",
+        "fieldGroup": "FieldGroup",
+        "icon": "Icon",
+        "kbd": "Kbd",
+        "tabs": "Tabs",
+        "steps": "Steps"
+      },
+      "images": {
+        "image": "Image",
+        "usingMarkdown": "Using Markdown",
+        "usingEmbeds": "Using Embeds",
+        "embedsAndHtml": "Embeds and HTML elements"
+      }
+    },
+    "searchDesc": {
+      "introduction": "Welcome to Nuxt UI SaaS template.",
+      "installation": "Get started with the template.",
+      "usage": "Learn how to write documentation.",
+      "markdown": "Text, title, and styling.",
+      "codeblocks": "Display code snippets.",
+      "prose": "Interactive UI components."
+    },
+    "nav": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "install": {
+      "subtitle": "Get started with Nuxt UI SaaS template.",
+      "quickStartTitle": "Quick Start",
+      "startFresh": "You can start a fresh new project with:",
+      "terminal": "Terminal",
+      "orCreate": "or create a new repository from GitHub:",
+      "steps": {
+        "step1": "Open",
+        "step2": "Click on <strong>Use this template</strong> button",
+        "step3": "Enter repository name and click on <strong>Create repository from template</strong> button",
+        "step4": "Clone your new repository",
+        "step5": "Install dependencies with your favorite package manager",
+        "step6": "Start development server"
+      },
+      "thatsIt": "That's it! You can now start writing your documentation in the <code class=\"inline-code\">content/</code> directory 🚀"
+    },
+    "intro": {
+      "subtitle": "Welcome to Nuxt UI SaaS template.",
+      "p1": "This template is a ready-to-use SaaS template made with <a href=\"#\">Nuxt UI</a> to create beautiful & responsive Nuxt applications in minutes.",
+      "p2": "This template includes a customizable landing page, a pricing page, a documentation, a blog and authentication pages (login, register).",
+      "keyFeaturesTitle": "Key Features",
+      "featuresDesc": "This template includes a range of features designed to streamline documentation management:",
+      "features": {
+        "nuxt": "<strong>Powered by Nuxt:</strong> Utilizes the latest Nuxt framework for optimal performance.",
+        "ui": "<strong>Built with Nuxt UI:</strong> Integrates a comprehensive suite of UI components.",
+        "mdc": "<strong>MDC Syntax via Nuxt Content:</strong> Supports Markdown with component integration for dynamic content.",
+        "sidebar": "<strong>Auto-generated Sidebar Navigation:</strong> Automatically generates navigation from content structure.",
+        "search": "<strong>Full-Text Search:</strong> Includes built-in search functionality for content discovery.",
+        "typography": "<strong>Optimized Typography:</strong> Features refined typography for enhanced readability.",
+        "darkMode": "<strong>Dark Mode:</strong> Offers dark mode support for user preference.",
+        "extensive": "<strong>Extensive Functionality:</strong> Explore the template to fully appreciate its capabilities."
+      }
+    },
+    "usage": {
+      "subtitle": "Learn how to write and customize.",
+      "writingContentTitle": "Writing content",
+      "p1": "All your content lives in the <code class=\"inline-code\">content/</code> directory. This template uses Nuxt Content to turn your Markdown files into pages.",
+      "p2": "You can use standard Markdown syntax to create your content. Vue components can also be embedded directly within the markdown using the MDC syntax.",
+      "markdownTitle": "Markdown Syntax",
+      "markdownDesc": "Learn how to write markdown content."
+    },
+    "markdown": {
+      "titlesTitle": "Titles",
+      "titlesDesc": "Use titles to introduce main sections. They structure your documentation and help users navigate content.",
+      "subtitlesTitle": "Subtitles",
+      "subtitlesDesc": "Use subtitles to divide sections further. They create a more detailed content hierarchy for better readability.",
+      "anchorDesc": "Each title and subtitle creates an anchor and shows up automatically in the table of contents.",
+      "formattingTitle": "Text Formatting",
+      "formattingDesc": "Nuxt UI supports most Markdown formatting options.",
+      "tableStyle": "Style",
+      "tableHow": "How to use",
+      "tableResult": "Result",
+      "bold": "Bold",
+      "italic": "Italic",
+      "strike": "Strike",
+      "combineDesc": "Combine formatting for richer text styles and visual emphasis.",
+      "boldItalic": "Bold Italic",
+      "boldStrike": "Bold Strike",
+      "italicStrike": "Italic Strike",
+      "mathDesc": "For exponents, indices, or mathematical notations, use HTML <code>&lt;sup&gt;</code> and <code>&lt;sub&gt;</code> tags.",
+      "sup": "Superscript",
+      "sub": "Subscript",
+      "linksTitle": "Links",
+      "linksDesc": "Links connect different parts of your documentation and external resources. To create a link, wrap the link text in brackets <code>[]()</code>.",
+      "internalLinksTitle": "Internal links",
+      "internalLinksDesc": "For linking within your documentation, use root-relative paths like <code>/getting-started/installation</code>.",
+      "listsTitle": "Lists",
+      "listsDesc": "Organize related items in a structured, readable format. Markdown supports unordered, ordered, and nested lists.",
+      "unorderedTitle": "Unordered",
+      "unorderedDesc": "Use unordered lists for items without a specific sequence. Start each item with a <code>-</code> symbol.",
+      "listItem1": "I'm a list item.",
+      "listItem2": "I'm another list item.",
+      "listItem3": "I'm the last list item.",
+      "orderedTitle": "Ordered",
+      "orderedDesc": "Use ordered lists when item order matters. Start each item with a number.",
+      "nestedTitle": "Nested",
+      "nestedDesc": "Create hierarchical lists with sub-items. Indent sub-items by four spaces.",
+      "nestedItem1": "I'm a nested list item.",
+      "nestedItem2": "I'm another nested list item.",
+      "tablesTitle": "Tables",
+      "tablesDesc": "Present structured data in rows and columns clearly. Tables are ideal for comparing data or listing properties.",
+      "tableProp": "Prop",
+      "tableDefault": "Default",
+      "tableType": "Type",
+      "blockquotesTitle": "Blockquotes",
+      "blockquotesDesc": "Highlight important quotations, citations, or emphasized text.",
+      "singlelineTitle": "Singleline",
+      "multilineTitle": "Multiline",
+      "quote1": "Nuxt UI is a collection of Vue components, composables and utils designed to create beautiful and accessible user interfaces.",
+      "quote1Short": "Nuxt UI is a collection of Vue components...",
+      "quote2": "Create beautiful, responsive, and accessible Vue applications with Nuxt UI.",
+      "quote2Short": "Create beautiful, responsive, and accessible..."
+    },
+    "codeblocks": {
+      "basicTitle": "Basic",
+      "inlineCodeTitle": "Inline Code",
+      "inlineCodeDesc": "Use inline code to display code snippets within text paragraphs. It's ideal for referencing code elements directly in sentences.",
+      "codeBlocksTitle": "Code Blocks",
+      "codeBlocksDesc": "Use code blocks to display multi-line code snippets with syntax highlighting. Code blocks are essential for presenting code examples clearly.",
+      "filenameDesc": "When writing a code-block, you can specify a filename that will be displayed on top of the code block. An icon will be automatically displayed based on the extension or the name.",
+      "copyBtnDesc": "Every code-block has a built-in copy button that will copy the code to your clipboard.",
+      "highlightLineTitle": "Highlight Line",
+      "highlightLineDesc": "To highlight lines of code, add <code class=\"inline-code\">{}</code> around the line numbers you want to highlight.",
+      "advancedTitle": "Advanced",
+      "codeGroupTitle": "CodeGroup",
+      "codeGroupDesc": "Group code blocks in tabs using <code class=\"inline-code\">code-group</code>. Perfect for showing multiple package managers.",
+      "codeTreeTitle": "CodeTree",
+      "codeTreeDesc": "Display code blocks in a file tree view using <code class=\"inline-code\">code-tree</code>.",
+      "codePreviewTitle": "CodePreview",
+      "codeCollapseTitle": "CodeCollapse",
+      "expandCode": "Expand code",
+      "collapseCode": "Collapse code"
+    },
+    "prose": {
+      "subtitle": "Components to help you structure your content.",
+      "accordionDesc": "Use <code class=\"inline-code\">accordion</code> and <code class=\"inline-code\">accordion-item</code> to create collapsible content sections. Accordions are useful for organizing FAQs, expandable details, or grouped information in an interactive way.",
+      "accQ1": "What are the main considerations when upgrading to Nuxt UI v3?",
+      "accA1": "The transition to v3 involves significant changes, including new component structures, updated theming approaches, and revised TypeScript definitions. We recommend a careful, incremental upgrade process, starting with thorough testing in a development environment.",
+      "accQ2": "Is Nuxt UI v3 compatible with standalone Vue projects?",
+      "accA2": "Nuxt UI is now compatible with Vue! You can follow the <a href=\"#\" class=\"primary-link\">installation guide</a> to get started.",
+      "badgeDesc": "Use badge to display status indicators or labels. Badges are great for highlighting version numbers, statuses, or categories within your content.",
+      "calloutDesc1": "Use callout to emphasize important contextual information. Callouts draw attention to notes, tips, warnings, or cautions, making key information stand out.",
+      "calloutDesc2": "Customize with <code class=\"inline-code\">icon</code> and <code class=\"inline-code\">color</code> props or use <code class=\"inline-code\">note</code>, <code class=\"inline-code\">tip</code>, <code class=\"inline-code\">warning</code>, <code class=\"inline-code\">caution</code> shortcuts for pre-defined semantic styles.",
+      "calloutBase": "This is a <code class=\"inline-code\">callout</code> with full <strong>markdown</strong> support.",
+      "calloutNote": "Here's some additional information for you.",
+      "calloutTip": "Here's a helpful suggestion.",
+      "calloutWarn": "Be careful with this action as it might have unexpected results.",
+      "calloutCaut": "This action cannot be undone.",
+      "cardDesc1": "Use <code class=\"inline-code\">card</code> to highlight content blocks. Cards are useful for showcasing features, resources, or related information in visually distinct and interactive containers.",
+      "cardDesc2": "Customize with <code class=\"inline-code\">title</code>, <code class=\"inline-code\">icon</code>, and <code class=\"inline-code\">color</code> props. Cards can also act as links using <code class=\"inline-code\">&lt;NuxtLink&gt;</code> properties for navigation.",
+      "cardDash": "A dashboard with multi-column layout.",
+      "cardGroupDesc": "Use <code class=\"inline-code\">card-group</code> to arrange cards in a grid layout. <code class=\"inline-code\">card-group</code> is ideal for displaying collections of cards in a structured, visually appealing, and responsive grid.",
+      "cardSaas": "A template with landing, pricing, docs and blog.",
+      "cardDocs": "A documentation with <code class=\"inline-code\">@nuxt/content</code>.",
+      "cardLanding": "A landing page you can use as starting point.",
+      "colDesc": "Use <code class=\"inline-code\">collapsible</code> to hide and reveal content sections. <code class=\"inline-code\">collapsible</code> is ideal for showing optional details, technical specifications, or less frequently needed information.",
+      "colShow": "Show properties",
+      "fieldDesc": "Use <code class=\"inline-code\">field</code> to describe a specific field, property, or parameter. <code class=\"inline-code\">field</code> components are perfect for documenting API parameters, component props, or configuration options.",
+      "fieldReq": "required",
+      "fieldDemo": "The <code class=\"inline-code\">description</code> can be set as prop or in the default slot with full <strong>markdown</strong> support.",
+      "fieldGroupDesc": "Use <code class=\"inline-code\">field-group</code> to group related fields together in a list. <code class=\"inline-code\">field-group</code> helps organize and structure documentation for multiple related fields or properties.",
+      "fgAnalyt": "Default to <code class=\"inline-code\">false</code> - Enables analytics for your project (coming soon).",
+      "fgBlob": "Default to <code class=\"inline-code\">false</code> - Enables blob storage to store static assets, such as images, videos and more.",
+      "fgCache": "Default to <code class=\"inline-code\">false</code> - Enables cache storage to cache your server route responses or functions using Nitro's <code class=\"inline-code\">cachedEventHandler</code> and <code class=\"inline-code\">cachedFunction</code>.",
+      "fgDb": "Default to <code class=\"inline-code\">false</code> - Enables SQL database to store your application's data.",
+      "iconDesc": "Use <code class=\"inline-code\">icon</code> to insert icons from icon libraries. Icons provide visual cues and enhance the user interface of your documentation.",
+      "kbdDesc": "Use <code class=\"inline-code\">kbd</code> to display keyboard keys or shortcuts. <code class=\"inline-code\">kbd</code> components clearly indicate keyboard inputs for instructions or command references.",
+      "tabsDesc": "Use <code class=\"inline-code\">tabs</code> and <code class=\"inline-code\">tabs-item</code> to organize content into tabbed interfaces. Tabs are effective for separating content into logical sections, improving content discoverability and organization.",
+      "stepsDesc1": "Use <code class=\"inline-code\">steps</code> to create step-by-step guides from document headings. <code class=\"inline-code\">steps</code> component automatically numbers headings, creating a numbered guide for processes and tutorials.",
+      "stepsDesc2": "Set the <code class=\"inline-code\">level</code> prop to define the heading level to include in the step-by-step guide.",
+      "step1": "Add the Nuxt UI module in your <code class=\"inline-code\">nuxt.config.ts</code>",
+      "step2": "Import Tailwind CSS and Nuxt UI in your CSS"
+    },
+    "images": {
+      "subtitle": "Add image, video, and other HTML elements.",
+      "imageTitle": "Image",
+      "usingMarkdownTitle": "Using Markdown",
+      "usingMarkdownDesc": "Display images using standard Markdown syntax. Markdown images are simple to implement for basic image display.",
+      "imgAlt": "Nuxt Social Image",
+      "imageCallout": "If <code class=\"inline-code\">@nuxt/image</code> is installed, the <code class=\"inline-code\">&lt;NuxtImg&gt;</code> component will be used instead of the native <code class=\"inline-code\">img</code> tag.",
+      "usingEmbedsTitle": "Using Embeds",
+      "usingEmbedsDesc": "Use embeds for more image customization. Embeds offer greater control over image attributes like size and styling.",
+      "embedsHtmlTitle": "Embeds and HTML elements",
+      "embedsHtmlDesc": "Embeds allow adding various HTML elements like videos and iframes. This feature extends documentation capabilities to include interactive and multimedia content.",
+      "iframeTitle": "YouTube video player"
+    },
+    "auth": {
+      "login": {
+        "title": "Welcome Back",
+        "subtitle": "Sign in to your account to continue",
+        "submitBtn": "Sign In",
+        "footerText": "Don't have an account?",
+        "footerLink": "Sign up"
+      },
+      "emailLabel": "Email address",
+      "emailPlaceholder": "name@example.com",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot your password?",
+      "orContinue": "Or continue with",
+      "google": "Google",
+      "github": "GitHub",
+      "register": {
+        "title": "Create an Account",
+        "subtitle": "Start your project in seconds.",
+        "nameLabel": "Full Name",
+        "namePlaceholder": "John Doe",
+        "emailPlaceholder": "name@company.com",
+        "passwordPlaceholder": "At least 8 characters",
+        "confirmPasswordLabel": "Confirm Password",
+        "confirmPasswordPlaceholder": "Confirm your password",
+        "submitBtn": "Sign Up",
+        "footerText": "Already have an account?",
+        "footerLink": "Sign In",
+        "errors": {
+          "passwordMismatch": "Passwords do not match.",
+          "passwordWeak": "Password must be at least 8 characters long, include 1 uppercase letter, 1 lowercase letter, and 1 special character."
+        }
+      }
+    },
+    "register": {
+      "title": "Create an Account",
+      "subtitle": "Start your project in seconds.",
+      "nameLabel": "Full Name",
+      "namePlaceholder": "John Doe",
+      "emailPlaceholder": "name@company.com",
+      "passwordPlaceholder": "At least 8 characters",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "submitBtn": "Sign Up",
+      "footerText": "Already have an account?",
+      "footerLink": "Sign In",
+      "errors": {
+        "passwordMismatch": "Passwords do not match.",
+        "passwordWeak": "Password must be at least 8 characters long, include 1 uppercase letter, 1 lowercase letter, and 1 special character."
+      }
+    }
+  },
+  "blog": {
+    "title": "Our Blog",
+    "subtitle": "Latest updates, guides, and stories from our team.",
+    "searchPlaceholder": "Search articles...",
+    "searchBtn": "Search",
+    "loading": "Loading articles...",
+    "noArticles": "No articles found for",
+    "clearSearch": "Clear Search",
+    "readArticle": "Read article",
+    "prev": "Prev",
+    "next": "Next"
+  }
+}

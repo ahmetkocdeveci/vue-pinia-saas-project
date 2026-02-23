@@ -4,8 +4,6 @@ import { useContentStore } from '../stores/useContent'
 
 const route = useRoute()
 const store = useContentStore()
-
-// URL'deki slug ile eşleşen yazıyı buluyoruz
 const post = store.getPostBySlug(route.params.slug)
 </script>
 
