@@ -4,6 +4,13 @@ import i18n from '../i18n'
 
 const supportedLocales = ['en', 'tr', 'ar']
 
+// 1. URL Uzantısı (Slug) Çeviri Sözlüğümüz
+export const slugMap = {
+  en: { pricing: 'pricing', blog: 'blog', login: 'login', register: 'register', docs: 'docs', changelog: 'changelog' },
+  tr: { pricing: 'fiyatlandirma', blog: 'blog', login: 'giris', register: 'kayit', docs: 'dokumanlar', changelog: 'guncellemeler' },
+  ar: { pricing: 'التسعير', blog: 'مدونة', login: 'تسجيل-الدخول', register: 'انشاء-حساب', docs: 'توثيق', changelog: 'التحديثات' }
+}
+
 const routes = [
   {
     path: '/:locale',
@@ -24,13 +31,13 @@ const routes = [
     },
     children: [
       { path: '', name: 'home', component: HomeView },
-      { path: 'pricing', name: 'pricing', component: () => import('../views/PricingView.vue') },
-      { path: 'blog', name: 'blog', component: () => import('../views/BlogView.vue') },
-      { path: 'blog/:slug', name: 'post-detail', component: () => import('../views/PostDetail.vue'), props: true },
-      { path: 'login', name: 'login', component: () => import('../views/LoginView.vue') },
-      { path: 'register', name: 'register', component: () => import('../views/RegisterView.vue') },
-      { path: 'docs', name: 'docs', component: () => import('../views/DocsView.vue') },
-      { path: 'changelog', name: 'changelog', component: () => import('../views/ChangelogView.vue') }
+      { path: 'pricing', alias: ['fiyatlandirma', 'التسعير'], name: 'pricing', component: () => import('../views/PricingView.vue') },
+      { path: 'blog', alias: ['مدونة'], name: 'blog', component: () => import('../views/BlogView.vue') },
+      { path: 'blog/:slug', alias: ['مدونة/:slug'], name: 'post-detail', component: () => import('../views/PostDetail.vue'), props: true },
+      { path: 'login', alias: ['giris', 'تسجيل-الدخول'], name: 'login', component: () => import('../views/LoginView.vue') },
+      { path: 'register', alias: ['kayit', 'انشاء-حساب'], name: 'register', component: () => import('../views/RegisterView.vue') },
+      { path: 'docs', alias: ['dokumanlar', 'توثيق'], name: 'docs', component: () => import('../views/DocsView.vue') },
+      { path: 'changelog', alias: ['guncellemeler', 'التحديثات'], name: 'changelog', component: () => import('../views/ChangelogView.vue') }
     ]
   },
   {

@@ -14,13 +14,17 @@ const fetchBlogs = async () => {
   isLoading.value = true
   try {
     const endpoint = locale.value === 'en' ? 'blogs' : `blogs_${locale.value}`
-    let url = `http://localhost:3000/${endpoint}?_page=${currentPage.value}&_limit=${limit}`
+    let url = `https://stripiest-semichemically-emilee.ngrok-free.dev/${endpoint}?_page=${currentPage.value}&_limit=${limit}`    
     
     if (searchQuery.value.trim() !== '') {
       url += `&q=${encodeURIComponent(searchQuery.value.trim())}`
     }
 
-    const response = await fetch(url)
+    const response = await fetch(url, {
+      headers: {
+        "ngrok-skip-browser-warning": "true"
+      }
+    })
     const totalCount = response.headers.get('X-Total-Count')
     totalPages.value = Math.ceil(totalCount / limit) || 1
     
@@ -31,6 +35,7 @@ const fetchBlogs = async () => {
     isLoading.value = false
   }
 }
+
 watch(locale, () => {
   currentPage.value = 1
   fetchBlogs()

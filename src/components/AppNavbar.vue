@@ -3,6 +3,7 @@ import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useAuthStore } from "../stores/useAuth";
 import { useI18n } from "vue-i18n";
+import { slugMap } from '../router/index.js';
 
 const authStore = useAuthStore();
 const router = useRouter();
@@ -12,39 +13,16 @@ const isDark = ref(true);
 const showDropdown = ref(false);
 const showLangDropdown = ref(false);
 const isMobileMenuOpen = ref(false);
-
 const toggleTheme = () => {
   isDark.value = !isDark.value;
   const theme = isDark.value ? "dark" : "light";
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
 };
-
-const handleLogout = () => {
-  authStore.logout();
-  showDropdown.value = false;
-  isMobileMenuOpen.value = false;
-router.push(`/${locale.value}/login`);};
-
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false;
   showLangDropdown.value = false;
 };
-const changeLanguage = (lang) => {
-  const currentPath = router.currentRoute.value.path;
-  const newPath = currentPath.replace(/^\/[^\/]+/, `/${lang}`);
-
-  locale.value = lang;
-  localStorage.setItem("user-lang", lang);
-
-  const direction = lang === "ar" ? "rtl" : "ltr";
-  document.documentElement.setAttribute("dir", direction);
-  document.documentElement.setAttribute("lang", lang);
-
-  router.push(newPath);
-  showLangDropdown.value = false;
-};
-
 onMounted(() => {
   const savedTheme = localStorage.getItem("theme") || "dark";
   isDark.value = savedTheme === "dark";
@@ -58,6 +36,42 @@ onMounted(() => {
   );
   document.documentElement.setAttribute("lang", savedLang);
 });
+const handleLogout = () => {
+  authStore.logout();
+  showDropdown.value = false;
+  isMobileMenuOpen.value = false;
+  router.push(`/${locale.value}/${slugMap[locale.value].login}`);
+};
+
+const changeLanguage = (lang) => {
+  const currentPath = router.currentRoute.value.path;
+  const pathParts = currentPath.split('/').filter(Boolean);
+  
+  let newPath = `/${lang}`;
+
+  if (pathParts.length > 1) {
+    const currentLang = pathParts[0];
+    const currentSlug = decodeURIComponent(pathParts[1]); 
+    const pageKey = Object.keys(slugMap[currentLang] || {}).find(
+      key => slugMap[currentLang][key] === currentSlug
+    ) || currentSlug;
+    const newSlug = slugMap[lang][pageKey] || currentSlug;
+    newPath += `/${newSlug}`;
+    if (pathParts.length > 2) {
+      newPath += `/${pathParts.slice(2).join('/')}`;
+    }
+  }
+
+  locale.value = lang;
+  localStorage.setItem("user-lang", lang);
+
+  const direction = lang === "ar" ? "rtl" : "ltr";
+  document.documentElement.setAttribute("dir", direction);
+  document.documentElement.setAttribute("lang", lang);
+
+  router.push(newPath);
+  showLangDropdown.value = false;
+};
 </script>
 
 <template>
@@ -71,14 +85,10 @@ onMounted(() => {
 
       <div class="desktop-menu">
         <div class="nav-links">
-          <router-link :to="`/${locale}/docs`">{{ t("nav.docs") }}</router-link>
-          <router-link :to="`/${locale}/pricing`">{{
-            t("nav.pricing")
-          }}</router-link>
-          <router-link :to="`/${locale}/blog`">{{ t("nav.blog") }}</router-link>
-          <router-link :to="`/${locale}/changelog`">{{
-            t("nav.changelog")
-          }}</router-link>
+          <router-link :to="`/${locale}/${slugMap[locale].docs}`">{{ t("nav.docs") }}</router-link>
+          <router-link :to="`/${locale}/${slugMap[locale].pricing}`">{{ t("nav.pricing") }}</router-link>
+          <router-link :to="`/${locale}/${slugMap[locale].blog}`">{{ t("nav.blog") }}</router-link>
+          <router-link :to="`/${locale}/${slugMap[locale].changelog}`">{{ t("nav.changelog") }}</router-link>
         </div>
 
         <div class="nav-actions">
@@ -186,12 +196,8 @@ onMounted(() => {
           </template>
 
           <template v-else>
-            <router-link :to="`/${locale}/login`" class="btn-login">{{
-              t("nav.signIn")
-            }}</router-link>
-            <router-link :to="`/${locale}/register`" class="btn-signup">{{
-              t("nav.signUp")
-            }}</router-link>
+            <router-link :to="`/${locale}/${slugMap[locale].login}`" class="btn-login">{{ t("nav.signIn") }}</router-link>
+            <router-link :to="`/${locale}/${slugMap[locale].register}`" class="btn-signup">{{ t("nav.signUp") }}</router-link>
           </template>
         </div>
       </div>
@@ -233,18 +239,10 @@ onMounted(() => {
 
     <div class="mobile-menu" :class="{ 'is-open': isMobileMenuOpen }">
       <div class="mobile-nav-links">
-        <router-link :to="`/${locale}/docs`" @click="closeMobileMenu">{{
-          t("nav.docs")
-        }}</router-link>
-        <router-link :to="`/${locale}/pricing`" @click="closeMobileMenu">{{
-          t("nav.pricing")
-        }}</router-link>
-        <router-link :to="`/${locale}/blog`" @click="closeMobileMenu">{{
-          t("nav.blog")
-        }}</router-link>
-        <router-link :to="`/${locale}/changelog`" @click="closeMobileMenu">{{
-          t("nav.changelog")
-        }}</router-link>
+        <router-link :to="`/${locale}/${slugMap[locale].docs}`" @click="closeMobileMenu">{{ t("nav.docs") }}</router-link>
+        <router-link :to="`/${locale}/${slugMap[locale].pricing}`" @click="closeMobileMenu">{{ t("nav.pricing") }}</router-link>
+        <router-link :to="`/${locale}/${slugMap[locale].blog}`" @click="closeMobileMenu">{{ t("nav.blog") }}</router-link>
+        <router-link :to="`/${locale}/${slugMap[locale].changelog}`" @click="closeMobileMenu">{{ t("nav.changelog") }}</router-link>
       </div>
 
       <div class="mobile-nav-actions">
@@ -292,18 +290,8 @@ onMounted(() => {
         </template>
 
         <template v-else>
-          <router-link
-            :to="`/${locale}/login`"
-            class="btn-login-mobile"
-            @click="closeMobileMenu"
-            >{{ t("nav.signIn") }}</router-link
-          >
-          <router-link
-            :to="`/${locale}/register`"
-            class="btn-signup-mobile"
-            @click="closeMobileMenu"
-            >{{ t("nav.signUp") }}</router-link
-          >
+          <router-link :to="`/${locale}/${slugMap[locale].login}`" class="btn-login-mobile" @click="closeMobileMenu">{{ t("nav.signIn") }}</router-link>
+          <router-link :to="`/${locale}/${slugMap[locale].register}`" class="btn-signup-mobile" @click="closeMobileMenu">{{ t("nav.signUp") }}</router-link>
         </template>
       </div>
     </div>
