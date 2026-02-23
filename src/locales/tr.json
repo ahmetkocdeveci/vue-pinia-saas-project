@@ -646,6 +646,9 @@
     "clearSearch": "Clear Search",
     "readArticle": "Read article",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "notFound": "Yazı Bulunamadı :(",
+    "backToBlog": "Blog listesine dön",
+    "relatedPosts": "Daha Fazla Makale"
   }
 }

@@ -646,6 +646,9 @@
     "clearSearch": "Clear Search",
     "readArticle": "Read article",
     "prev": "Prev",
-    "next": "Next"
+    "next": "Next",
+    "notFound": "Article Not Found :(",
+    "backToBlog": "Back to Blog List",
+    "relatedPosts": "More Articles"
   }
 }
