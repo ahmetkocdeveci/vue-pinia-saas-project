@@ -1,10 +1,9 @@
-import { createRouter, createWebHistory, RouterView } from 'vue-router'
+import { createRouter, createWebHistory, createMemoryHistory, RouterView } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import i18n from '../i18n'
 
 const supportedLocales = ['en', 'tr', 'ar']
 
-// 1. URL Uzantısı (Slug) Çeviri Sözlüğümüz
 export const slugMap = {
   en: { pricing: 'pricing', blog: 'blog', login: 'login', register: 'register', docs: 'docs', changelog: 'changelog' },
   tr: { pricing: 'fiyatlandirma', blog: 'blog', login: 'giris', register: 'kayit', docs: 'dokumanlar', changelog: 'guncellemeler' },
@@ -17,15 +16,19 @@ const routes = [
     component: RouterView,
     beforeEnter: (to, from, next) => {
       const locale = to.params.locale
+      
       if (!supportedLocales.includes(locale)) {
-        const savedLang = localStorage.getItem('user-lang') || 'en'
+        const savedLang = typeof window !== 'undefined' ? (localStorage.getItem('user-lang') || 'en') : 'en'
         return next(`/${savedLang}`)
       }
       
       i18n.global.locale.value = locale
-      localStorage.setItem('user-lang', locale)
-      document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr')
-      document.documentElement.setAttribute('lang', locale)
+      
+      if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+        localStorage.setItem('user-lang', locale)
+        document.documentElement.setAttribute('dir', locale === 'ar' ? 'rtl' : 'ltr')
+        document.documentElement.setAttribute('lang', locale)
+      }
       
       next()
     },
@@ -43,26 +46,28 @@ const routes = [
   {
     path: '/',
     redirect: () => {
-      const savedLang = localStorage.getItem('user-lang') || 'en'
+      const savedLang = typeof window !== 'undefined' ? (localStorage.getItem('user-lang') || 'en') : 'en'
       return `/${savedLang}`
     }
   },
   {
     path: '/:pathMatch(.*)*',
     redirect: () => {
-      const savedLang = localStorage.getItem('user-lang') || 'en'
+      const savedLang = typeof window !== 'undefined' ? (localStorage.getItem('user-lang') || 'en') : 'en'
       return `/${savedLang}`
     }
   }
 ]
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    if (to.hash) return { el: to.hash, behavior: 'smooth', top: 80 }
-    return { top: 0 }
-  }
-})
-
-export default router
+export function createRouterInstance() {
+  return createRouter({
+    history: typeof window === 'undefined' ? createMemoryHistory() : createWebHistory(),
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+      if (typeof window !== 'undefined' && to.hash) {
+         return { el: to.hash, behavior: 'smooth', top: 80 }
+      }
+      return { top: 0 }
+    }
+  })
+}

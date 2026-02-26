@@ -118,19 +118,19 @@ const changeLanguage = (lang) => {
               class="dropdown-menu glass lang-dropdown"
             >
               <button
-                @click="changeLanguage('en')"
+                @click.stop="changeLanguage('en')"
                 :class="{ active: locale === 'en' }"
               >
                 English
               </button>
               <button
-                @click="changeLanguage('tr')"
+                @click.stop="changeLanguage('tr')"
                 :class="{ active: locale === 'tr' }"
               >
                 Türkçe
               </button>
               <button
-                @click="changeLanguage('ar')"
+                @click.stop="changeLanguage('ar')"
                 :class="{ active: locale === 'ar' }"
               >
                 العربية
